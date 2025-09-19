@@ -1,6 +1,22 @@
-<script setup lang="ts">
+<script setup>
+    import { Form, usePage } from "@inertiajs/vue3";
     import Card from "../../Components/Backoffice/Shared/Card/Card.vue";
     import AuthLayout from "../../Layouts/Backoffice/AuthLayout.vue";
+    import Input from "../../Components/Backoffice/Shared/Forms/Input.vue";
+    import InputPassword from "../../Components/Backoffice/Shared/Forms/InputPassword.vue";
+    import Swal from "sweetalert2";
+    import { watchPostEffect } from "vue";
+
+    const page = usePage();
+
+    watchPostEffect(() => {
+        if (page.props.flash?.error) {
+            Swal.fire({
+                icon: "error",
+                text: page.props.flash.error,
+            });
+        }
+    });
 </script>
 
 <template>
@@ -17,43 +33,29 @@
                 <h1 class="card-title text-center">Login</h1>
             </template>
 
-            <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+            <Form action="/admin/login" method="POST" #default="{ errors }">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email or Username</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="email"
-                        name="email-username"
-                        placeholder="Enter your email or username"
+                    <Input
+                        id="username"
+                        name="username"
+                        label="Username"
+                        placeholder="Masukkan username"
                         autofocus
+                        :err-message="errors.username"
                     />
                 </div>
                 <div class="mb-3 form-password-toggle">
-                    <div class="d-flex justify-content-between">
-                        <label class="form-label" for="password">Password</label>
-                        <!-- <a href="auth-forgot-password-basic.html">
-                                <small>Forgot Password?</small>
-                            </a> -->
-                    </div>
-                    <div class="input-group input-group-merge">
-                        <input
-                            type="password"
-                            id="password"
-                            class="form-control"
-                            name="password"
-                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                            aria-describedby="password"
-                        />
-                        <span class="input-group-text cursor-pointer"
-                            ><i class="bx bx-hide"></i
-                        ></span>
-                    </div>
+                    <InputPassword
+                        id="password"
+                        label="Password"
+                        name="password"
+                        :err-message="'hihi'"
+                    />
                 </div>
                 <div class="mb-3 mt-5">
                     <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
                 </div>
-            </form>
+            </Form>
         </Card>
     </AuthLayout>
 </template>
