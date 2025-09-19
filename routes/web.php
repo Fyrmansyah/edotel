@@ -14,12 +14,12 @@ Route::middleware(ClientMiddleware::class)->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('landing-page');
 });
 
-Route::middleware(BackofficeMiddleware::class)->group(function () {
-    Route::get('/admin/login', [AuthController::class, 'login']);
-    Route::post('/admin/login', [AuthController::class, 'loginAction']);
+Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function () {
+    Route::get('/login', [AuthController::class, 'login']);
+    Route::post('/login', [AuthController::class, 'loginAction']);
 
     Route::middleware(AuthAdminMiddleware::class)->group(function () {
-        Route::get('/admin', [DashboardController::class, 'index']);
+        Route::get('/', [DashboardController::class, 'index']);
 
         Route::prefix('accounts')->group(function () {
             Route::apiResource('superadmin', SuperadminController::class);
