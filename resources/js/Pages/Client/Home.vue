@@ -5,13 +5,17 @@
     import AboutUs from "../../Components/Client/Home/AboutUs.vue";
     import Facilities from "../../Components/Client/Home/Facilities.vue";
     import Footer from "../../Components/Client/Home/Footer.vue";
+    import Gallery from "../../Components/Client/Home/Gallery.vue";
+    import Pricing from "../../Components/Client/Home/Pricing.vue";
 </script>
 
 <template>
     <Header />
     <Banner />
-    <SearchBar />
+    <!-- <SearchBar /> -->
     <AboutUs />
     <Facilities />
+    <Pricing />
+    <Gallery />
     <Footer />
 </template>

@@ -9,7 +9,7 @@
                     >
                         <img
                             class="h-[100%] w-[100%] object-cover"
-                            :src="'/client/assets/images/banner/home-1.1.webp'"
+                            :src="'/client/assets/images/main/bed-2.JPG'"
                             alt=""
                         />
                     </div>
@@ -47,7 +47,83 @@
                     >
                         <img
                             class="h-[100%] w-[100%] object-cover"
-                            :src="'/client/assets/images/banner/home-1-2.webp'"
+                            :src="'/client/assets/images/main/bed-1.JPG'"
+                            alt=""
+                        />
+                    </div>
+                    <div class="container relative z-50">
+                        <div
+                            class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
+                        >
+                            <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
+                                >Welcome to our spa</span
+                            >
+                            <h1
+                                class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
+                            >
+                                Luxury Stay Hotel Experience Comfort & Elegance
+                            </h1>
+                            <p
+                                class="anim-3 mx-auto mb-[40px] max-w-[560px] text-sm leading-[28px] text-white"
+                            >
+                                Choosing Bokinn was one of the best decisions we've ever made. They
+                                have proven to be a reliable and innovative partner
+                            </p>
+                            <a
+                                class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
+                                href="#"
+                                >Discover Room</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!-- single slider end -->
+                <!-- single slider -->
+                <div class="swiper-slide">
+                    <div
+                        class="banner__image befere:content-[''] absolute h-[100%] w-[100%] before:absolute before:inset-0 before:h-[100%] before:w-[100%] before:bg-[#000834a6]"
+                    >
+                        <img
+                            class="h-[100%] w-[100%] object-cover"
+                            :src="'/client/assets/images/main/bed-3.JPG'"
+                            alt=""
+                        />
+                    </div>
+                    <div class="container relative z-50">
+                        <div
+                            class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
+                        >
+                            <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
+                                >Welcome to our spa</span
+                            >
+                            <h1
+                                class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
+                            >
+                                Luxury Stay Hotel Experience Comfort & Elegance
+                            </h1>
+                            <p
+                                class="anim-3 mx-auto mb-[40px] max-w-[560px] text-sm leading-[28px] text-white"
+                            >
+                                Choosing Bokinn was one of the best decisions we've ever made. They
+                                have proven to be a reliable and innovative partner
+                            </p>
+                            <a
+                                class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
+                                href="#"
+                                >Discover Room</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!-- single slider end -->
+                <!-- single slider -->
+                <div class="swiper-slide">
+                    <div
+                        class="banner__image befere:content-[''] absolute h-[100%] w-[100%] before:absolute before:inset-0 before:h-[100%] before:w-[100%] before:bg-[#000834a6]"
+                    >
+                        <img
+                            class="h-[100%] w-[100%] object-cover"
+                            :src="'/client/assets/images/main/bed-4.JPG'"
                             alt=""
                         />
                     </div>

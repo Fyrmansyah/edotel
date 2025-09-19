@@ -6,12 +6,12 @@
         <div class="container">
             <div class="mb-[40px] text-center">
                 <span
-                    class="subtitle font-glida heading-6 heading text-primary before:bg-[url('images/shape/section__style__three-1.html')] after:bg-[url('images/shape/section__style__two.html')]"
+                    class="subtitle font-glida heading-6 heading text-primary before:bg-[url('/client/images/shape/section__style__three-1.html')] after:bg-[url('/client/images/shape/section__style__two.html')]"
                     >Facilities</span
                 >
                 <h2 class="text-heading mt-[15px]">Hotel Facilities</h2>
             </div>
-            <div class="grid grid-cols-1 gap-[25px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div class="grid grid-cols-1 gap-[25px] md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
                 <div class="rounded-[10px] bg-white px-[30px] py-[40px] text-center transition">
                     <img
                         class="mx-auto mb-[25px]"
@@ -22,8 +22,8 @@
                         >Rooms and Suites</a
                     >
                     <p>
-                        Varied types of rooms, from standard to luxury suites, equipped with
-                        essentials like beds.
+                        ruangan kamar yang nyaman, bersih, dan ber-ac. dengan kasur yang empuk
+                        membuat tidur nyenyak
                     </p>
                 </div>
                 <div class="rounded-[10px] bg-white px-[30px] py-[40px] text-center transition">
@@ -36,8 +36,8 @@
                         >24-Hour Security</a
                     >
                     <p>
-                        On-site security personnel and best surveillance. from standard to luxury
-                        suites,Secure for valuables.
+                        berdiri di kawasan yang aman, dan dijaga selama 24 jam. karena keamanan
+                        pelanggan sangat penting bagi kami
                     </p>
                 </div>
                 <div class="rounded-[10px] bg-white px-[30px] py-[40px] text-center transition">
@@ -46,26 +46,21 @@
                         :src="'/client/assets/images/icon/gym.svg'"
                         alt="icon"
                     />
-                    <a class="heading-6 heading text-heading mb-[15px] block" href="#"
-                        >Fitness Center</a
-                    >
+                    <a class="heading-6 heading text-heading mb-[15px] block" href="#">Caffe</a>
                     <p>
-                        Equipped with exercise machines and weights.Offering massages, facials, and
-                        other treatments.
+                        Tersedia caffe dengan berbagi menu makanan bergizi dan lezat dengan harga
+                        yang terjangkau
                     </p>
                 </div>
                 <div class="rounded-[10px] bg-white px-[30px] py-[40px] text-center transition">
                     <img
                         class="mx-auto mb-[25px]"
-                        :src="'/client/assets/images/icon/swimming-pool.svg'"
+                        :src="'/client/assets/images/icon/gym.svg'"
                         alt="icon"
                     />
-                    <a class="heading-6 heading text-heading mb-[15px] block" href="#"
-                        >Swimming Pool</a
-                    >
+                    <a class="heading-6 heading text-heading mb-[15px] block" href="#">Laundry</a>
                     <p>
-                        Indoor or outdoor pools for leisure or exercise.Offering massages, facials,
-                        and other treatments
+                        Tersedia juga laundry. wangi, bersih, lembut
                     </p>
                 </div>
             </div>

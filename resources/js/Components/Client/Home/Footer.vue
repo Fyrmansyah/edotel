@@ -1,5 +1,5 @@
 <template>
-    <div class="relative bg-gray pt-[60px]">
+    <div class="relative bg-white pt-[60px]">
         <div class="container">
             <div
                 class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] lg:flex justify-between mb-[40px] relative z-[1]"
@@ -41,20 +41,21 @@
                                 class="flex gap-2 items-center"
                                 aria-label="footer__contact"
                                 href="tel:+12505550199"
-                                ><i class="flaticon-phone-flip"></i> +12505550199</a
-                            >
+                                ><i class="flaticon-phone-flip"></i> +62 0895-4173-00072
+                            </a>
                         </li>
                         <li>
                             <a
                                 class="flex gap-2 items-center"
                                 aria-label="footer__contact"
                                 href="mailto:UjJw6@example.com"
-                                ><i class="flaticon-envelope"></i>Moonlit@gmail.com</a
+                                ><i class="flaticon-envelope"></i>test@gmail.com</a
                             >
                         </li>
                         <li>
                             <a class="flex gap-2 items-center" aria-label="footer__contact" href="#"
-                                ><i class="flaticon-marker"></i>M5T 2L9 Toronto, Canada</a
+                                ><i class="flaticon-marker"></i>Jl. Smea No.4, Wonokromo, Kec.
+                                Wonokromo, Surabaya</a
                             >
                         </li>
                     </ul>
