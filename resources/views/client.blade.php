@@ -113,100 +113,6 @@
         </div>
     </div>
 
-    <!-- Modal Background (Overlay) -->
-    <div class="bg-heading fixed z-[99999] flex items-center justify-center bg-opacity-25 shadow-sm" id="loginmodal">
-        <div class="relative">
-            <div class="modal-content min-w-[350px] max-w-[350px] bg-white p-[40px] md:min-w-[600px] md:max-w-[600px]">
-                <div class="max-w-full">
-                    <div class="mb-4 flex items-center justify-between">
-                        <h6 class="text-heading mb-0 text-center">Login To Moonlit</h6>
-                        <button class="btn-close" type="button" aria-label="Close">
-                            <svg class="bi bi-x-lg" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" viewBox="0 0 16 16">
-                                <path
-                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                            </svg>
-                        </button>
-                    </div>
-                    <form class="flex flex-col gap-4" action="https://moonlit-tailwind.netlify.app/candidate-dashboard.html"
-                        method="post">
-                        <div class="form-group">
-                            <label class="text-heading mb-2 block text-gray-800" for="email-popup">Your Email</label>
-                            <div class="relative">
-                                <input
-                                    class="w-full rounded-[4px] border border-[rgba(125,128,135,0.3)] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    id="email-popup" name="email-popup" type="email" placeholder="Enter your email"
-                                    required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="text-heading mb-2 block text-gray-800" for="password">Password</label>
-                            <div class="relative">
-                                <input
-                                    class="w-full rounded-[4px] border border-[rgba(125,128,135,0.3)] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    id="password" name="password" type="password" placeholder="Enter your password" required>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="form-check flex items-center gap-2">
-                                <input class="form-check-input h-4 w-4 rounded border-gray-300 text-indigo-600"
-                                    id="flexCheckDefault" type="checkbox">
-                                <label class="form-check-label text-gray-600" for="flexCheckDefault">
-                                    Remember me
-                                </label>
-                            </div>
-                            <a class="text-gray-600 hover:text-indigo-500" data-bs-toggle="modal" data-bs-target="#forgotModal"
-                                href="#">Forgot Password?</a>
-                        </div>
-                        <div class="form-group">
-                            <button
-                                class="bg-primary w-full rounded-[4px] p-[10px_0] text-white transition hover:bg-indigo-700">Login</button>
-                        </div>
-                    </form>
-                    <p class="text mt-4 text-center text-gray-600">Don’t have an account? <a
-                            class="text-indigo-600 hover:text-indigo-500" href="#">Sign Up</a></p>
-                </div>
-            </div>
-
-            <!-- <div class="flex w-full max-w-md transform flex-col rounded-md bg-white px-4 py-8 shadow-md transition-all duration-500 sm:px-6 md:px-8 lg:px-10">
-      <h6 class="mt-3 self-center text-xl font-medium text-gray-800 sm:text-2xl">Login To Your Account</h6>
-      <button class="absolute right-0 top-[-10px] mr-4 mt-4 text-[25px]" id="close-modal">x</button>
-      <div class="mt-4">
-        <form action="#">
-          <div class="mb-3 flex flex-col">
-            <label class="mb-2 text-xs tracking-wide text-gray-600 sm:text-sm" for="email">E-Mail Address:</label>
-            <div class="relative">
-              <input class="w-full rounded-[4px] border border-gray-400 border-opacity-10 py-2 pl-4 pr-4 text-sm placeholder-gray-500 focus:border-blue-400 focus:outline-none sm:text-base" id="email" name="email" type="email" placeholder="E-Mail Address"/>
-            </div>
-          </div>
-          <div class="mb-6 flex flex-col">
-            <label class="mb-2 text-xs tracking-wide text-gray-600 sm:text-sm" for="password">Password:</label>
-            <div class="relative">
-              <input class="w-full rounded-[4px] border border-gray-400 border-opacity-10 py-2 pl-4 pr-4 text-sm placeholder-gray-500 focus:border-blue-400 focus:outline-none sm:text-base" id="password" name="password" type="password" placeholder="Password"/>
-            </div>
-          </div>
-          <div class="-mt-4 mb-6 flex items-center">
-            <div class="ml-auto flex">
-              <a class="inline-flex text-xs text-blue-500 hover:text-blue-700 sm:text-sm" href="#">Forgot Your Password?</a>
-            </div>
-          </div>
-  
-          <div class="flex w-full">
-            <button class="bg-primary flex w-full items-center justify-center rounded py-2 text-sm text-white transition duration-150 ease-in focus:outline-none sm:text-base" type="submit">
-              <span class="mr-2 uppercase">Login</span>
-            </button>
-          </div>
-        </form>
-      </div>
-      <div class="mt-6 flex items-center justify-center">
-        <a class="inline-flex items-center text-center text-xs font-bold text-blue-500 hover:text-blue-700" href="#" target="_blank">
-          <span class="ml-2">You don't have an account?</span>
-        </a>
-      </div>
-    </div> -->
-        </div>
-    </div>
-
     <!-- offcanvase menu -->
     <div class="offcanvas max-w-[1300px] transition-all">
         <div class="flex w-[100%] flex-col">
@@ -224,7 +130,7 @@
                         <div class="offcanvase__top">
                             <div class="offcanvase__logo">
                                 <a href='index.html'>
-                                    <img src="assets/images/logo/logo__two.svg" alt="logo">
+                                    <img alt="logo" :src="'/client/assets/images/logo/logo__two.svg'">
                                 </a>
                             </div>
                             <p class="mt-[20px] text-white">

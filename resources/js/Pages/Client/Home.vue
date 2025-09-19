@@ -7,6 +7,10 @@
     import Footer from "../../Components/Client/Home/Footer.vue";
     import Gallery from "../../Components/Client/Home/Gallery.vue";
     import Pricing from "../../Components/Client/Home/Pricing.vue";
+
+    defineProps({
+        photos: Array,
+    });
 </script>
 
 <template>
@@ -16,6 +20,6 @@
     <AboutUs />
     <Facilities />
     <Pricing />
-    <Gallery />
+    <Gallery :photos="photos" />
     <Footer />
 </template>

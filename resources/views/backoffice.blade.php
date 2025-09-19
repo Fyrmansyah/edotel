@@ -43,6 +43,28 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ '/backoffice/assets/js/config.js' }}"></script>
 
+    <!-- overriding css -->
+    <style>
+        .filepond--credits {
+            display: none;
+        }
+
+        .filepond--drop-label {
+            /* border: 1px solid #8080805c; */
+            border-radius: 8px;
+            background-color: transparent;
+        }
+
+        .filepond--item {
+            position: relative;
+            aspect-ratio: 1;
+        }
+
+        .swal2-container {
+            z-index: 9999;
+        }
+    </style>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @inertiaHead
 </head>

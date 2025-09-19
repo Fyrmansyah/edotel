@@ -98,7 +98,7 @@
 
         <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item" :class="isActive('/admin')">
+            <li class="menu-item" :class="{ active: $page.url === '/admin' }">
                 <Link href="/admin" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-home-circle"></i>
                     <div data-i18n="Analytics">Dashboard</div>
@@ -176,6 +176,12 @@
                     <i class="menu-icon tf-icons bx bx-collection"></i>
                     <div data-i18n="Basic">Bookings</div>
                 </a>
+            </li>
+            <li class="menu-item" :class="isActive('/admin/photos')">
+                <Link href="/admin/photos" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-user"></i>
+                    <div data-i18n="Tables">Photos</div>
+                </Link>
             </li>
         </ul>
     </aside>

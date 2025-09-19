@@ -1,6 +1,25 @@
-<script setup lang="ts">
+<script setup>
+    import { watch } from "vue";
     import NavHeader from "./NavHeader.vue";
     import SidebarMenu from "./SidebarMenu.vue";
+    import { usePage } from "@inertiajs/vue3";
+    import { Alert } from "../../Helpers/sweet-alert";
+
+    const page = usePage();
+
+    watch(
+        () => page.props.flash,
+        () => {
+            console.log(page.props.flash);
+
+            if (page.props.flash?.success) {
+                Alert.success(page.props.flash?.success);
+            }
+            if (page.props.flash?.error) {
+                Alert.error(page.props.flash?.error);
+            }
+        },
+    );
 </script>
 
 <template>

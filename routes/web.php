@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backoffice\AuthController;
 use App\Http\Controllers\Backoffice\DashboardController;
+use App\Http\Controllers\Backoffice\PhotoController;
 use App\Http\Controllers\Backoffice\SuperadminController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Middleware\AuthAdminMiddleware;
@@ -24,5 +25,7 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
         Route::prefix('accounts')->group(function () {
             Route::apiResource('superadmin', SuperadminController::class);
         });
-        });
+
+        Route::resource('photos', PhotoController::class)->only(['index', 'create', 'store']);
+    });
 });
