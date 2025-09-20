@@ -166,10 +166,10 @@
             </li>
             <!-- Cards -->
             <li class="menu-item">
-                <a href="cards-basic.html" class="menu-link">
+                <Link href="/admin/pricings" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rooms</div>
-                </a>
+                    <div data-i18n="Basic">Pricing</div>
+                </Link>
             </li>
             <li class="menu-item">
                 <a href="cards-basic.html" class="menu-link">

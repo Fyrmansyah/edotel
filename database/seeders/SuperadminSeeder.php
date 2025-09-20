@@ -15,7 +15,7 @@ class SuperadminSeeder extends Seeder
     {
         Admin::create([
             'username' => 'superadmin',
-            'password' => 'super123',
+            'password' => 'test@2025',
             'role' => Admin::ROLE_SUPERADMIN
         ]);
     }

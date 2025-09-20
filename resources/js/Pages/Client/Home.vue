@@ -10,6 +10,7 @@
 
     defineProps({
         photos: Array,
+        pricings: Object,
     });
 </script>
 
@@ -19,7 +20,7 @@
     <!-- <SearchBar /> -->
     <AboutUs />
     <Facilities />
-    <Pricing />
+    <Pricing :pricings="pricings" />
     <Gallery :photos="photos" />
     <Footer />
 </template>
