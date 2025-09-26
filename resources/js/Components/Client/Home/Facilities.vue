@@ -5,10 +5,7 @@
         </div>
         <div class="container">
             <div class="mb-[40px] text-center">
-                <span
-                    class="subtitle font-glida heading-6 heading text-primary before:bg-[url('/client/images/shape/section__style__three-1.html')] after:bg-[url('/client/images/shape/section__style__two.html')]"
-                    >Facilities</span
-                >
+                <span class="subtitle font-glida heading-6 heading text-primary">Facilities</span>
                 <h2 class="text-heading mt-[15px]">Hotel Facilities</h2>
             </div>
             <div class="grid grid-cols-1 gap-[25px] md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
@@ -59,9 +56,7 @@
                         alt="icon"
                     />
                     <a class="heading-6 heading text-heading mb-[15px] block" href="#">Laundry</a>
-                    <p>
-                        Tersedia juga laundry. wangi, bersih, lembut
-                    </p>
+                    <p>Tersedia juga laundry. wangi, bersih, lembut</p>
                 </div>
             </div>
         </div>

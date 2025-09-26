@@ -46,7 +46,7 @@
 
                 <div class="content prose mt-[30px] md:mt-0">
                     <span
-                        class="heading heading-6 text-primary relative left-[65px] mb-[15px] inline-block before:absolute before:bottom-[50%] before:left-[-65px] before:h-[12px] before:w-[52px] before:translate-y-2/4 before:transform before:bg-[url('/client/images/shape/section__style__two.html')] before:bg-no-repeat"
+                        class="heading heading-6 text-primary relative left-[65px] mb-[15px] inline-block before:absolute before:bottom-[50%] before:left-[-65px] before:h-[12px] before:w-[52px] before:translate-y-2/4 before:transform before:bg-no-repeat"
                         >About Us</span
                     >
                     <h2 class="text-heading mb-[30px]">SMESA Edotel Syariah Surabaya</h2>
