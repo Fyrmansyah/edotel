@@ -1,6 +1,6 @@
 <template>
     <button class="btn" :class="variant" :disabled="props.isLoading">
-        <div v-if="props.isLoading" class="flex gap-2 items-center">
+        <div v-if="props.isLoading" class="flex gap-2 items-center justify-center">
             <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
             <span role="status">Loading...</span>
         </div>
