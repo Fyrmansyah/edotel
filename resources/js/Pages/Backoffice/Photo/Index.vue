@@ -5,13 +5,21 @@
     import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
     import FilePondPluginImagePreview from "filepond-plugin-image-preview";
     import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
+    import FilePondPluginFileValidateSize from "filepond-plugin-file-validate-size";
+    import FilePondPluginImageValidateSize from "filepond-plugin-image-validate-size";
+
     import AppLayout from "../../../Layouts/Backoffice/AppLayout.vue";
     import { router } from "@inertiajs/vue3";
     import PageHeader from "../../../Components/Backoffice/Shared/Navigations/PageHeader.vue";
     import Breadcrumb from "../../../Components/Backoffice/Shared/Navigations/Breadcrumb.vue";
     import Button from "../../../Components/Backoffice/Shared/Buttons/Button.vue";
 
-    const FilePond = vueFilePond(FilePondPluginImagePreview, FilePondPluginFileValidateType);
+    const FilePond = vueFilePond(
+        FilePondPluginImagePreview,
+        FilePondPluginFileValidateType,
+        FilePondPluginFileValidateSize,
+        FilePondPluginImageValidateSize,
+    );
 
     defineOptions({ layout: AppLayout });
     const props = defineProps({ photos: Array });
@@ -43,5 +51,6 @@
         :files="files"
         @updatefiles="files = $event"
         label-idle="Drag & Drop gambar dengan aspect ratio 1:1 <span class='filepond--label-action'>Browse</span>"
+        max-total-file-size="8MB"
     />
 </template>
