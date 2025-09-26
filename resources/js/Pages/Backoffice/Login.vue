@@ -6,6 +6,7 @@
     import InputPassword from "../../Components/Backoffice/Shared/Forms/InputPassword.vue";
     import Swal from "sweetalert2";
     import { watchPostEffect } from "vue";
+import Button from "../../Components/Backoffice/Shared/Buttons/Button.vue";
 
     const page = usePage();
 
@@ -53,7 +54,7 @@
                     />
                 </div>
                 <div class="mb-3 mt-5">
-                    <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                    <Button variant="primary" class="w-full" type="submit">Sign In</Button>
                 </div>
             </Form>
         </Card>
