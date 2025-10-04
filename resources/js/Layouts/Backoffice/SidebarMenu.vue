@@ -171,11 +171,11 @@
                     <div data-i18n="Basic">Pricing</div>
                 </Link>
             </li>
-            <li class="menu-item">
-                <a href="cards-basic.html" class="menu-link">
+            <li class="menu-item" :class="isActive('/admin/bookings')">
+                <Link href="/admin/bookings" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
                     <div data-i18n="Basic">Bookings</div>
-                </a>
+                </Link>
             </li>
             <li class="menu-item" :class="isActive('/admin/photos')">
                 <Link href="/admin/photos" class="menu-link">

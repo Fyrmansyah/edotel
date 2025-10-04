@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\Backoffice\AuthController;
+use App\Http\Controllers\Backoffice\BookingController as BackofficeBookingController;
 use App\Http\Controllers\Backoffice\DashboardController;
 use App\Http\Controllers\Backoffice\PaymentMethodController;
 use App\Http\Controllers\Backoffice\PhotoController;
 use App\Http\Controllers\Backoffice\PricingController;
 use App\Http\Controllers\Backoffice\SuperadminController;
+use App\Http\Controllers\Client\BookingController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Middleware\AuthAdminMiddleware;
 use App\Http\Middleware\BackofficeMiddleware;
@@ -15,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(ClientMiddleware::class)->group(function () {
 
     Route::get('/', [HomeController::class, 'home'])->name('landing-page');
+    Route::get('/booking', [BookingController::class, 'formView']);
+    Route::post('/booking', [BookingController::class, 'createBooking']);
+    Route::get('/booking/{booking}', [BookingController::class, 'bookingDetail']);
 });
 
 Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function () {
@@ -23,7 +28,7 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
 
     Route::middleware(AuthAdminMiddleware::class)->group(function () {
         Route::get('/', [DashboardController::class, 'index']);
-        
+
         Route::get('/pricings', [PricingController::class, 'index']);
         Route::post('/pricings/{pricing}', [PricingController::class, 'update']);
 
@@ -33,6 +38,10 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
         Route::prefix('accounts')->group(function () {
             Route::apiResource('superadmin', SuperadminController::class);
         });
+
+        Route::get('/bookings', [BackofficeBookingController::class, 'index']);
+        Route::post('/bookings/update/{booking}', [BackofficeBookingController::class, 'update']);
+
 
         Route::resource('photos', PhotoController::class)->only(['index', 'create', 'store']);
     });

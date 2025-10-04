@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { Link } from '@inertiajs/vue3';
+
+</script>
+
 <template>
     <div class="bg-heading">
         <!-- header top -->
@@ -86,11 +91,12 @@
                         >
                             Sign Up
                         </button> -->
-                        <a
+                        <Link
                             class="theme-btn btn-style sm-btn fill rounded-[0]"
-                            href="room-details-1.html"
-                            ><span class="!text-white">Book Now</span></a
+                            href="/booking"
                         >
+                            <span class="!text-white">Book Now</span>
+                        </Link>
                         <button
                             class="theme-btn btn-style sm-btn fill menu__btn rounded-[0] lg:hidden block"
                             id="menu__btn"
