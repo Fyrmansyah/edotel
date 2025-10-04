@@ -1,21 +1,43 @@
 <script setup>
+    import vueFilePond from "vue-filepond";
+    import "filepond/dist/filepond.min.css";
+    import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+    import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+    import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
+    import FilePondPluginFileValidateSize from "filepond-plugin-file-validate-size";
+    import FilePondPluginImageValidateSize from "filepond-plugin-image-validate-size";
     import { useForm } from "@inertiajs/vue3";
     import Button from "../../../Components/Backoffice/Shared/Buttons/Button.vue";
     import Input from "../../../Components/Backoffice/Shared/Forms/Input.vue";
     import Modal from "../../../Components/Backoffice/Shared/Modal/Modal.vue";
     import Breadcrumb from "../../../Components/Backoffice/Shared/Navigations/Breadcrumb.vue";
     import PageHeader from "../../../Components/Backoffice/Shared/Navigations/PageHeader.vue";
-    import Table from "../../../Components/Backoffice/Shared/Table/Table.vue";
     import AppLayout from "../../../Layouts/Backoffice/AppLayout.vue";
-    import { ref } from "vue";
     import Card from "../../../Components/Backoffice/Shared/Card/Card.vue";
+    import { useQris } from "../../../Composeables/Pricing/useQris";
+    import { onMounted } from "vue";
 
     defineOptions({ layout: AppLayout });
-    defineProps({ pricings: Array });
+    const props = defineProps({ pricings: Array, qris: Object });
+
+    const FilePond = vueFilePond(
+        FilePondPluginImagePreview,
+        FilePondPluginFileValidateType,
+        FilePondPluginFileValidateSize,
+        FilePondPluginImageValidateSize,
+    );
+
+    const cqris = useQris();
 
     const form = useForm({
         id: null,
         value: null,
+    });
+
+    onMounted(() => {
+        if (props.qris.image) {
+            cqris.files.value = "/storage/" + props.qris.image;
+        }
     });
 
     const openEdit = (pricing) => {
@@ -47,6 +69,23 @@
                 class="w-full"
             >
                 Edit
+            </Button>
+        </Card>
+        <Card>
+            <FilePond
+                accepted-file-types="image/*"
+                :files="cqris.files.value"
+                @updatefiles="cqris.files.value = $event"
+                label-idle="Drag & Drop gambar dengan aspect ratio 1:1 <span class='filepond--label-action'>Browse</span>"
+                max-total-file-size="8MB"
+            />
+            <Button
+                variant="warning"
+                @click="cqris.update"
+                class="w-full"
+                :is-loading="cqris.isSubmitting.value"
+            >
+                Update
             </Button>
         </Card>
     </div>

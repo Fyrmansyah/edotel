@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backoffice\AuthController;
 use App\Http\Controllers\Backoffice\DashboardController;
+use App\Http\Controllers\Backoffice\PaymentMethodController;
 use App\Http\Controllers\Backoffice\PhotoController;
 use App\Http\Controllers\Backoffice\PricingController;
 use App\Http\Controllers\Backoffice\SuperadminController;
@@ -25,6 +26,9 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
         
         Route::get('/pricings', [PricingController::class, 'index']);
         Route::post('/pricings/{pricing}', [PricingController::class, 'update']);
+
+        Route::get('/payment-methods/qris', [PaymentMethodController::class, 'getQris']);
+        Route::post('/payment-methods/qris', [PaymentMethodController::class, 'updateQris']);
 
         Route::prefix('accounts')->group(function () {
             Route::apiResource('superadmin', SuperadminController::class);
