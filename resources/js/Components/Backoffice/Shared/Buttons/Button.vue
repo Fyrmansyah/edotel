@@ -9,6 +9,9 @@
 </template>
 
 <script setup lang="ts">
-    const props = defineProps<{ variant: "primary" | "danger" | "warning"; isLoading?: boolean }>();
+    const props = defineProps<{
+        variant: "primary" | "danger" | "warning" | "success";
+        isLoading?: boolean;
+    }>();
     const variant = `btn-${props.variant}`;
 </script>
