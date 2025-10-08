@@ -1,4 +1,6 @@
 <script setup>
+    import { PRICING_KEY } from "../../../Helpers/constant";
+
     defineProps({ pricings: Object });
 </script>
 <template>
@@ -38,7 +40,7 @@
                             </li>
                         </ul>
                         <span class="heading heading-3 block mt-[25px] text-primary"
-                            >Rp{{ pricings["Harga Kamar"].toLocaleString("id") }}</span
+                            >Rp{{ pricings[PRICING_KEY.kamar_medium].toLocaleString("id") }}</span
                         >
                     </div>
                 </div>
