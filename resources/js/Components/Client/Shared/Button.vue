@@ -1,7 +1,10 @@
 <template>
     <button
-        class="!bg-[#AB8A62] text-white !px-5 !py-1 rounded-lg"
-        :class="{ 'opacity-60': isLoading }"
+        class="!px-5 !py-1 rounded-lg !bg-[#AB8A62] text-white"
+        :class="{
+            'opacity-60': isLoading,
+            '!bg-gray-100 border !border-gray-200 !text-black': variant === 'gray',
+        }"
         :disabled="props.isLoading"
     >
         <div v-if="props.isLoading" class="flex flex-1 gap-2 items-center justify-center">
@@ -13,5 +16,5 @@
 </template>
 
 <script setup lang="ts">
-    const props = defineProps<{ isLoading?: boolean }>();
+    const props = defineProps<{ isLoading?: boolean; variant?: "primary" | "gray" }>();
 </script>
