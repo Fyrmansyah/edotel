@@ -36,7 +36,7 @@
     });
 
     onMounted(() => {
-        if (props.qris.image) {
+        if (props.qris?.image) {
             cqris.files.value = "/storage/" + props.qris.image;
         }
     });
