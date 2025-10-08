@@ -27,6 +27,7 @@ class BookingRequest extends FormRequest
             'check_in' => 'date|required',
             'check_out' => 'date|required',
             'jml_orang' => 'integer|required',
+            'jenis_kamar' => 'string|required',
             'extra_kasur' => 'integer|nullable',
             'extra_makan' => 'integer|nullable',
         ];

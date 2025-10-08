@@ -17,9 +17,12 @@ return new class extends Migration
             $table->string('booking_id')->unique()->default('-');
             $table->string('name');
             $table->string('no_tlp');
-            $table->dateTime('check_in');
-            $table->dateTime('check_out');
+            $table->date('check_in');
+            $table->date('check_out');
             $table->unsignedInteger('jml_orang');
+            $table->string('jenis_kamar');
+            $table->unsignedInteger('extra_kasur')->default(0);
+            $table->unsignedInteger('extra_makan')->default(0);
             $table->string('status')->default(Booking::STATUS_PENDING);
             $table->text('client_note')->nullable();
             $table->text('admin_note')->nullable();
