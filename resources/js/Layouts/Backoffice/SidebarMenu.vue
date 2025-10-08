@@ -165,7 +165,7 @@
                 <span class="menu-header-text">Components</span>
             </li>
             <!-- Cards -->
-            <li class="menu-item">
+            <li class="menu-item" :class="isActive('/admin/pricings')">
                 <Link href="/admin/pricings" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
                     <div data-i18n="Basic">Pricing</div>
