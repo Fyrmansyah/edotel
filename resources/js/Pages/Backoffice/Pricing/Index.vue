@@ -16,6 +16,7 @@
     import Card from "../../../Components/Backoffice/Shared/Card/Card.vue";
     import { useQris } from "../../../Composeables/Pricing/useQris";
     import { onMounted } from "vue";
+    import { formatToIdr } from "../../../Helpers/shared";
 
     defineOptions({ layout: AppLayout });
     const props = defineProps({ pricings: Array, qris: Object });
@@ -59,7 +60,7 @@
         <Card v-for="p in pricings">
             <div>
                 <h3>{{ p.name }}</h3>
-                <h1>Rp{{ p.value }}</h1>
+                <h1>{{ formatToIdr(p.value) }}</h1>
             </div>
             <Button
                 @click="() => openEdit(p)"
@@ -72,6 +73,7 @@
             </Button>
         </Card>
         <Card>
+            <h3>Photo QRIS</h3>
             <FilePond
                 accepted-file-types="image/*"
                 :files="cqris.files.value"
