@@ -14,7 +14,7 @@ class PricingSeeder extends Seeder
     public function run(): void
     {
         Pricing::create(['name' => 'Harga Kamar - Medium', 'value' => 150000]);
-        Pricing::create(['name' => 'Harga Kamar - Large', 'value' => 150000]);
+        Pricing::create(['name' => 'Harga Kamar - Large', 'value' => 300000]);
         Pricing::create(['name' => 'Extra Makan', 'value' => 50000]);
         Pricing::create(['name' => 'Extra Kasur', 'value' => 75000]);
     }
