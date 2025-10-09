@@ -9,9 +9,12 @@
 </template>
 
 <script setup lang="ts">
+    import { computed } from "vue";
+
     const props = defineProps<{
         variant: "primary" | "danger" | "warning" | "success";
         isLoading?: boolean;
     }>();
-    const variant = `btn-${props.variant}`;
+
+    const variant = computed(() => `btn-${props.variant}`);
 </script>
