@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <h4 class="fw-bold py-3 mb-0 flex gap-2 items-center">
+    <h4 class="fw-bold mb-0 flex gap-2 items-center">
         <template v-for="(path, idx) in props.paths" :key="idx">
             <Link
                 v-if="idx !== props.paths.length - 1"
