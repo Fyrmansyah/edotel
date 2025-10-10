@@ -19,6 +19,9 @@ class BookingController extends Controller
             ->when($request->check_out, function ($query, $check_out) {
                 $query->where('check_out', '=', $check_out);
             })
+            ->when($request->status, function ($query, $status) {
+                $query->where('status', '=', $status);
+            })
             ->latest()
             ->paginate(10);
 

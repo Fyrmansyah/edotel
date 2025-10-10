@@ -29,12 +29,14 @@
     const selectedBooking = ref(null);
     const filterCheckIn = ref(null);
     const filterCheckOut = ref(null);
+    const filterStatus = ref(null);
 
-    watch([filterCheckIn, filterCheckOut], () => {
+    watch([filterCheckIn, filterCheckOut, filterStatus], () => {
         let params = {};
 
         if (filterCheckIn.value) params.check_in = filterCheckIn.value;
         if (filterCheckOut.value) params.check_out = filterCheckOut.value;
+        if (filterStatus.value) params.status = filterStatus.value;
 
         router.get("/admin/bookings", params, {
             preserveState: true,
@@ -45,14 +47,7 @@
     const resetFilter = () => {
         filterCheckIn.value = null;
         filterCheckOut.value = null;
-    };
-
-    const checkIsApproved = (status) => {
-        if (!status) {
-            return false;
-        }
-
-        return status === BOOKING.status.approved;
+        filterStatus.value = null;
     };
 
     const getBtnVariant = (status) => {
@@ -182,6 +177,22 @@
                     placeholder="Check Out"
                     v-model="filterCheckOut"
                 />
+            </div>
+            <div>
+                <label>Status</label>
+                <select class="form-select" v-model="filterStatus">
+                    <option class="capitalize" selected :value="null">All</option>
+                    <option class="capitalize" :value="BOOKING.status.pending">pending</option>
+                    <option class="capitalize" :value="BOOKING.status.approved">approved</option>
+                    <option class="capitalize" :value="BOOKING.status.confirmed">confirmed</option>
+                    <option class="capitalize" :value="BOOKING.status.checked_in">
+                        checked in
+                    </option>
+                    <option class="capitalize" :value="BOOKING.status.checked_out">
+                        checked out
+                    </option>
+                    <option class="capitalize" :value="BOOKING.status.rejected">rejected</option>
+                </select>
             </div>
             <button class="btn btn-secondary whitespace-nowrap" @click="resetFilter">
                 Reset Filter
