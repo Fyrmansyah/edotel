@@ -2,8 +2,9 @@
     import { usePoll } from "@inertiajs/vue3";
     import Swal from "sweetalert2";
     import { computed, ref } from "vue";
+    import { formatToIdr } from "../../Helpers/shared";
 
-    const props = defineProps({ booking: Object });
+    const props = defineProps({ booking: Object, qris: Object });
 
     usePoll(2000);
 
@@ -120,10 +121,11 @@
             <h1 class="text-white !mt-12 !mb-5">Sukses</h1>
             <p class="text-white text-center max-w-2xl">
                 Booking anda telah di approved oleh admin kami, harap segera melakukan pembayaran
-                sesuai nominal melalui qriz dibawah ini, dan harap simpan atau copy booking id
+                sesuai nominal melalui qris dibawah ini dengan batas pembayaran adalah 3 jam setelah
+                booking anda di approved atau booking akan hangus. harap simpan atau copy booking id
                 dibawah ini
             </p>
-            <button @click="copyBookingId" class="flex gap-2 items-center !mt-5">
+            <button @click="copyBookingId" class="flex gap-2 items-center !mt-5 !mb-8">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -158,6 +160,20 @@
 
                 <p class="text-white !text-xl font-bold">Booking ID: {{ booking.booking_id }}</p>
             </button>
+            <div class="bg-white flex flex-col gap-2 items-center !shadow-md max-w-md">
+                <img :src="'/storage/' + qris.image" class="w-full" />
+                <div>
+                    <p class="text-center text-black">Nominal yang harus dibayarkan</p>
+                </div>
+                <h2 class="font-bold text-black">
+                    {{ formatToIdr(booking.total_price / 2) }}
+                </h2>
+                <p class="text-center px-4 !text-[12px] leading-snug text-gray-500 !mb-5">
+                    <span class="text-red-500">*</span> nominal diatas merupakan dp 50% dari total
+                    biaya :
+                    {{ formatToIdr(booking.total_price) }}
+                </p>
+            </div>
         </div>
         <div
             v-else-if="booking.status === 'rejected'"

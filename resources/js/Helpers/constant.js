@@ -4,3 +4,14 @@ export const PRICING_KEY = {
     extra_makan: "Extra Makan",
     extra_kasur: "Extra Kasur",
 };
+
+export const BOOKING = {
+    status: {
+        pending: "pending",
+        approved: "approved",
+        rejected: "rejected",
+        confirmed: "confirmed",
+        checked_in: "checked_in",
+        checked_out: "checked_out",
+    },
+};

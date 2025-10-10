@@ -4,6 +4,8 @@
     import { computed, ref } from "vue";
     import { differenceInDays } from "date-fns";
     import { formatToIdr } from "../../Helpers/shared";
+    import { PRICING_KEY } from "../../Helpers/constant";
+    import BookingDetailItem from "../../Components/Client/Booking/BookingDetailItem.vue";
 
     const props = defineProps({ pricings: Object });
 
@@ -18,6 +20,7 @@
         jml_orang: null,
         extra_kasur: null,
         extra_makan: null,
+        jenis_kamar: null,
     });
 
     const lama_menginap = computed(() => {
@@ -28,8 +31,17 @@
         return differenceInDays(form.check_out, form.check_in);
     });
 
+    const jenisKamarKey = computed(() => {
+        const key = {
+            medium: PRICING_KEY.kamar_medium,
+            large: PRICING_KEY.kamar_large,
+        };
+
+        return key[form.jenis_kamar];
+    });
+
     const total = computed(() => {
-        let total = lama_menginap.value * props.pricings["Harga Kamar"]?.value;
+        let total = lama_menginap.value * props.pricings[jenisKamarKey.value]?.value;
 
         if (form.extra_kasur) {
             total += lama_menginap.value * form.extra_kasur * props.pricings["Extra Kasur"]?.value;
@@ -68,7 +80,7 @@
                         d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
                     />
                 </svg>
-                <span>kembali</span>
+                <span>kembali ke beranda</span>
             </Link>
             <div class="!shadow-lg rounded-lg px-5 py-6 bg-white">
                 <div class="flex flex-col gap-3">
@@ -77,7 +89,8 @@
                         <input
                             v-model="form.name"
                             type="name"
-                            class="border rounded !border-zinc-400 !px-3 !py-1"
+                            placeholder="nama anda"
+                            class="border rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
                         />
                         <span class="text-red-500 !text-sm">{{ form.errors.name }}</span>
                     </div>
@@ -86,7 +99,8 @@
                         <input
                             v-model="form.no_tlp"
                             type="name"
-                            class="border rounded !border-zinc-400 !px-3 !py-1"
+                            placeholder="masukkan nomor telepon anda"
+                            class="border rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
                         />
                         <span class="text-red-500 !text-sm">{{ form.errors.no_tlp }}</span>
                     </div>
@@ -95,7 +109,7 @@
                         <input
                             v-model="form.check_in"
                             type="date"
-                            class="border rounded !border-zinc-400 !px-3 !py-1"
+                            class="border rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
                         />
                         <span class="text-red-500 !text-sm">{{ form.errors.check_in }}</span>
                     </div>
@@ -104,7 +118,7 @@
                         <input
                             v-model="form.check_out"
                             type="date"
-                            class="border rounded !border-zinc-400 !px-3 !py-1"
+                            class="border rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
                         />
                         <span class="text-red-500 !text-sm">{{ form.errors.check_out }}</span>
                     </div>
@@ -114,8 +128,22 @@
                             v-model="form.jml_orang"
                             type="number"
                             min="1"
-                            class="border rounded !border-zinc-400 !px-3 !py-1"
+                            placeholder="jumlah orang yang akan menginap"
+                            class="border rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
                         />
+                        <span class="text-red-500 !text-sm">{{ form.errors.jml_orang }}</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="text-zinc-800 !text-sm">Jenis Kamar</label>
+                        <div
+                            class="!border !rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
+                        >
+                            <select class="!appearance-auto w-full" v-model="form.jenis_kamar">
+                                <option disabled>pilih jenis kamar</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </div>
                         <span class="text-red-500 !text-sm">{{ form.errors.jml_orang }}</span>
                     </div>
                     <div class="flex items-center gap-2 my-2">
@@ -129,7 +157,8 @@
                             v-model="form.extra_kasur"
                             type="number"
                             min="1"
-                            class="border rounded !border-zinc-400 !px-3 !py-1"
+                            placeholder="jumlah kasur tambahan"
+                            class="border rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
                         />
                         <span class="text-red-500 !text-sm">{{ form.errors.extra_kasur }}</span>
                     </div>
@@ -140,235 +169,88 @@
                             type="number"
                             min="1"
                             class="border rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
-                            placeholder="Jumlah makanan yang anda pesan"
+                            placeholder="jumlah makanan yang anda pesan"
                         />
                         <span class="text-red-500 !text-sm">{{ form.errors.extra_makan }}</span>
                     </div>
-                    <div class="flex items-center gap-2 my-2">
-                        <div class="h-[1px] bg-gray-300 flex-1"></div>
-                        <p class="text-gray-600">Booking Summary</p>
-                        <div class="h-[1px] bg-gray-300 flex-1"></div>
-                    </div>
-                    <div class="border !border-gray-200 p-3 rounded-lg">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        Nama
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                    >
-                                        {{ form.name }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        No Telepon
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                    >
-                                        {{ form.no_tlp }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        Check In
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                    >
-                                        {{ form.check_in }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        Check Out
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                    >
-                                        {{ form.check_out }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        Lama Menghinap
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                    >
-                                        {{ lama_menginap }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        Jumlah Orang
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                    >
-                                        {{ form.jml_orang }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        Extra Kasur
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                    >
-                                        {{ form.extra_kasur || "-" }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="pt-1 whitespace-nowrap">Extra Makan</td>
-                                    <td class="pt-1 px-3">:</td>
-                                    <td class="pt-1 w-full">
-                                        {{ form.extra_makan ? `${form.extra_makan}x` : "-" }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="border !border-gray-200 p-3 rounded-lg">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        Biaya Menginap
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-2 my-2">
+                            <div class="h-[1px] bg-gray-300 flex-1"></div>
+                            <p class="text-gray-600">Booking Summary</p>
+                            <div class="h-[1px] bg-gray-300 flex-1"></div>
+                        </div>
+                        <div class="border !border-gray-200 p-3 rounded-lg">
+                            <table>
+                                <tbody>
+                                    <BookingDetailItem text1="Nama" :text2="form.name" />
+                                    <BookingDetailItem text1="No Telepon" :text2="form.no_tlp" />
+                                    <BookingDetailItem text1="Check In" :text2="form.check_in" />
+                                    <BookingDetailItem text1="Check Out" :text2="form.check_out" />
+                                    <BookingDetailItem
+                                        text1="Lama Menginap"
+                                        :text2="(lama_menginap ?? 0) + ' malam'"
+                                    />
+                                    <BookingDetailItem
+                                        text1="Jumlah Orang"
+                                        :text2="form.jml_orang"
+                                    />
+                                    <BookingDetailItem
+                                        text1="Jenis Kamar"
+                                        :text2="form.jenis_kamar"
+                                    />
+                                    <BookingDetailItem
+                                        text1="Extra Kasur"
+                                        :text2="form.extra_kasur || '-'"
+                                    />
+                                    <BookingDetailItem
+                                        text1="Extra Makan"
+                                        no-border
+                                        :text2="form.extra_makan || '-'"
+                                    />
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="border !border-gray-200 p-3 rounded-lg">
+                            <table>
+                                <tbody>
+                                    <BookingDetailItem
                                         v-if="lama_menginap"
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                    >
-                                        {{ formatToIdr(pricings["Harga Kamar"]?.value) }} x
-                                        {{ lama_menginap }} malam
-                                    </td>
-                                    <td
-                                        v-else
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                    >
-                                        -
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        Biaya Extra Kasur
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
+                                        text1="Biaya Menginap"
+                                        :text2="`${formatToIdr(
+                                            pricings[jenisKamarKey]?.value,
+                                        )} x ${lama_menginap} malam`"
+                                    />
+                                    <BookingDetailItem
                                         v-if="form.extra_kasur"
-                                    >
-                                        {{ formatToIdr(pricings["Extra Kasur"]?.value) }} x
-                                        {{ form.extra_kasur }} /malam
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                        v-else
-                                    >
-                                        -
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 whitespace-nowrap"
-                                    >
-                                        Biaya Extra Makan
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 px-3"
-                                    >
-                                        :
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
+                                        text1="Biaya Extra Kasur"
+                                        :text2="`${formatToIdr(
+                                            pricings[PRICING_KEY.extra_kasur]?.value,
+                                        )} x ${form.extra_kasur} x ${lama_menginap} malam`"
+                                    />
+                                    <BookingDetailItem
                                         v-if="form.extra_makan"
-                                    >
-                                        {{ formatToIdr(pricings["Extra Makan"]?.value) }} x
-                                        {{ form.extra_makan }}
-                                    </td>
-                                    <td
-                                        class="align-baseline !border-b !border-b-gray-200 py-1 w-full"
-                                        v-else
-                                    >
-                                        -
-                                    </td>
-                                </tr>
-                                <tr class="!text-lg font-semibold">
-                                    <td class="pt-1 whitespace-nowrap">Total</td>
-                                    <td class="pt-1 px-3">:</td>
-                                    <td class="pt-1 w-full">{{ formatToIdr(total) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                        text1="Biaya Extra Makan"
+                                        :text2="`${formatToIdr(
+                                            pricings[PRICING_KEY.extra_makan]?.value,
+                                        )} x ${form.extra_makan}`"
+                                    />
+                                    <BookingDetailItem
+                                        text1="Total"
+                                        :text2="formatToIdr(total)"
+                                        no-border
+                                        class="!text-lg font-semibold"
+                                    />
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <Button :is-loading="isSubmitting" @click="handleSubmit" class="w-full !mt-8">
+                <Button
+                    :is-loading="isSubmitting"
+                    @click="handleSubmit"
+                    type="button"
+                    class="w-full !mt-8"
+                >
                     Submit
                 </Button>
             </div>
