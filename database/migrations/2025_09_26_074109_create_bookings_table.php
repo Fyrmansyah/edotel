@@ -21,8 +21,11 @@ return new class extends Migration
             $table->date('check_out');
             $table->unsignedInteger('jml_orang');
             $table->string('jenis_kamar');
-            $table->unsignedInteger('extra_kasur')->default(0);
-            $table->unsignedInteger('extra_makan')->default(0);
+            $table->unsignedInteger('harga_kamar');
+            $table->unsignedInteger('extra_kasur')->nullable();
+            $table->unsignedInteger('extra_kasur_price')->nullable();
+            $table->unsignedInteger('extra_makan')->nullable();
+            $table->unsignedInteger('extra_makan_price')->nullable();
             $table->string('status')->default(Booking::STATUS_PENDING);
             $table->text('client_note')->nullable();
             $table->text('admin_note')->nullable();
