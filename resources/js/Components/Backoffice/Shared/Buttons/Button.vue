@@ -12,7 +12,7 @@
     import { computed } from "vue";
 
     const props = defineProps<{
-        variant: "primary" | "danger" | "warning" | "success";
+        variant: "primary" | "danger" | "warning" | "success" | "secondary";
         isLoading?: boolean;
     }>();
 
