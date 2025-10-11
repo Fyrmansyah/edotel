@@ -6,7 +6,7 @@ use App\Http\Controllers\Backoffice\DashboardController;
 use App\Http\Controllers\Backoffice\PaymentMethodController;
 use App\Http\Controllers\Backoffice\PhotoController;
 use App\Http\Controllers\Backoffice\PricingController;
-use App\Http\Controllers\Backoffice\SuperadminController;
+use App\Http\Controllers\Backoffice\AccountController;
 use App\Http\Controllers\Client\BookingController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Middleware\AuthAdminMiddleware;
@@ -25,6 +25,7 @@ Route::middleware(ClientMiddleware::class)->group(function () {
 Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function () {
     Route::get('/login', [AuthController::class, 'login']);
     Route::post('/login', [AuthController::class, 'loginAction']);
+    Route::get('/logout', [AuthController::class, 'logout']);
 
     Route::middleware(AuthAdminMiddleware::class)->group(function () {
         Route::get('/', [DashboardController::class, 'index']);
@@ -35,9 +36,7 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
         Route::get('/payment-methods/qris', [PaymentMethodController::class, 'getQris']);
         Route::post('/payment-methods/qris', [PaymentMethodController::class, 'updateQris']);
 
-        Route::prefix('accounts')->group(function () {
-            Route::apiResource('superadmin', SuperadminController::class);
-        });
+        Route::apiResource('accounts', AccountController::class);
 
         Route::get('/bookings', [BackofficeBookingController::class, 'index']);
         Route::post('/bookings/update/{booking}', [BackofficeBookingController::class, 'update']);

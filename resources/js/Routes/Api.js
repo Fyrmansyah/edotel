@@ -12,5 +12,11 @@ export const ROUTE_API = {
             index: "/admin/index",
             update_status: (bookingId) => `/admin/bookings/update/${bookingId}`,
         },
+        accounts: {
+            index: "/admin/accounts",
+            create: "/admin/accounts",
+            update: (id) => `/admin/accounts/${id}`,
+            delete: (id) => `/admin/accounts/${id}`,
+        },
     },
 };

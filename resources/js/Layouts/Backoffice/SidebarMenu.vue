@@ -141,46 +141,42 @@
                 </ul>
             </li> -->
 
-            <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">Accounts</span>
-            </li>
-            <li class="menu-item" :class="isActive('/admin/accounts/superadmin')">
-                <Link href="/admin/accounts/superadmin" class="menu-link">
+            <li class="menu-item" :class="isActive('/admin/accounts')">
+                <Link href="/admin/accounts" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-user"></i>
-                    <div data-i18n="Tables">Superadmin</div>
+                    <div data-i18n="Tables">Account</div>
                 </Link>
-            </li>
-            <li class="menu-item">
-                <a
-                    href="tables-basic.html"
-                    class="menu-link"
-                    :class="{ active: $page.url.startsWith('/admins') }"
-                >
-                    <i class="menu-icon tf-icons bx bx-user"></i>
-                    <div data-i18n="Tables">Admin</div>
-                </a>
             </li>
             <!-- Components -->
             <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">Components</span>
+                <span class="menu-header-text">Manage</span>
             </li>
             <!-- Cards -->
             <li class="menu-item" :class="isActive('/admin/pricings')">
                 <Link href="/admin/pricings" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
+                    <i class="menu-icon tf-icons bx bx-money"></i>
                     <div data-i18n="Basic">Pricing</div>
                 </Link>
             </li>
             <li class="menu-item" :class="isActive('/admin/bookings')">
                 <Link href="/admin/bookings" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
+                    <i class="menu-icon tf-icons bx bx-bed"></i>
                     <div data-i18n="Basic">Bookings</div>
                 </Link>
             </li>
             <li class="menu-item" :class="isActive('/admin/photos')">
                 <Link href="/admin/photos" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-user"></i>
+                    <i class="menu-icon tf-icons bx bx-camera"></i>
                     <div data-i18n="Tables">Photos</div>
+                </Link>
+            </li>
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Account</span>
+            </li>
+            <li class="menu-item">
+                <Link href="/admin/logout" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-log-out"></i>
+                    <div data-i18n="Tables">Log Out</div>
                 </Link>
             </li>
         </ul>

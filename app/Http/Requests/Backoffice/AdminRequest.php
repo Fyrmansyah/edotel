@@ -25,9 +25,10 @@ class AdminRequest extends FormRequest
         return [
             'username' => [
                 'required',
-                Rule::unique('admins', 'username')->ignore($this->route('admin')),
+                Rule::unique('admins', 'username')->ignore($this->route('account')),
             ],
-            'password' => 'required'
+            'password' => $this->route('account') ? 'nullable' : 'required',
+            'role' => 'required',
         ];
     }
 }
