@@ -5,19 +5,24 @@
         </div>
         <div class="input-group input-group-merge">
             <input
-                type="password"
+                :type="isVisiblePass ? 'text' : 'password'"
                 class="form-control"
                 placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                 v-bind="$attrs"
                 v-model="model"
             />
-            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+            <span class="input-group-text cursor-pointer" @click="isVisiblePass = !isVisiblePass">
+                <i :class="isVisiblePass ? 'bx bx-show' : 'bx bx-hide'"></i>
+            </span>
         </div>
         <div v-if="errMessage" class="invalid-feedback">{{ errMessage }}</div>
     </div>
 </template>
 
 <script setup>
+    import { ref } from "vue";
+
     defineProps({ label: String, errMessage: String });
     const model = defineModel();
+    const isVisiblePass = ref(false);
 </script>
