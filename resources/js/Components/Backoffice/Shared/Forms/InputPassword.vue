@@ -7,6 +7,7 @@
             <input
                 :type="isVisiblePass ? 'text' : 'password'"
                 class="form-control"
+                :class="{ 'is-invalid': errMessage }"
                 placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                 v-bind="$attrs"
                 v-model="model"
@@ -15,14 +16,14 @@
                 <i :class="isVisiblePass ? 'bx bx-show' : 'bx bx-hide'"></i>
             </span>
         </div>
-        <div v-if="errMessage" class="invalid-feedback">{{ errMessage }}</div>
+        <span class="invalid-feedback !block">{{ props.errMessage }}</span>
     </div>
 </template>
 
 <script setup>
     import { ref } from "vue";
 
-    defineProps({ label: String, errMessage: String });
+    const props = defineProps({ label: String, errMessage: String });
     const model = defineModel();
     const isVisiblePass = ref(false);
 </script>
