@@ -18,6 +18,8 @@ Route::middleware(ClientMiddleware::class)->group(function () {
 
     Route::get('/', [HomeController::class, 'home'])->name('landing-page');
     Route::get('/booking', [BookingController::class, 'formView']);
+    Route::get('/booking/find', [BookingController::class, 'findBooking']);
+    Route::post('/booking/find', [BookingController::class, 'findBookingAction']);
     Route::post('/booking', [BookingController::class, 'createBooking']);
     Route::get('/booking/{booking}', [BookingController::class, 'bookingDetail']);
 });

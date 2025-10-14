@@ -349,6 +349,11 @@
                     <td>{{ selectedBooking?.detail_extra_makan ?? "-" }}</td>
                 </tr>
                 <tr class="font-bold">
+                    <td class="capitalize">Total</td>
+                    <td>:</td>
+                    <td>{{ formatToIdr(selectedBooking?.total_price) }}</td>
+                </tr>
+                <tr class="font-bold">
                     <td class="capitalize">dp 50%</td>
                     <td>:</td>
                     <td>{{ formatToIdr(selectedBooking?.total_price / 2) }}</td>

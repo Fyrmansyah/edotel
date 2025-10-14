@@ -82,13 +82,20 @@
                 </svg>
                 <span>kembali ke beranda</span>
             </Link>
+            <div class="flex bg-[#f6cc9a] p-3 rounded-lg mb-4">
+                <p class="text-black">
+                    Apa anda sudah melakukan booking sebelumnya?
+                    <Link class="underline font-bold" href="/booking/find"> Klik disini </Link>
+                    untuk melihat booking anda
+                </p>
+            </div>
             <div class="!shadow-lg rounded-lg px-5 py-6 bg-white">
                 <div class="flex flex-col gap-3">
                     <div class="flex flex-col gap-1">
                         <label class="text-zinc-800 !text-sm">Nama</label>
                         <input
                             v-model="form.name"
-                            type="name"
+                            type="text"
                             placeholder="nama anda"
                             class="border rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
                         />
@@ -98,7 +105,7 @@
                         <label class="text-zinc-800 !text-sm">No Telepon</label>
                         <input
                             v-model="form.no_tlp"
-                            type="name"
+                            type="text"
                             placeholder="masukkan nomor telepon anda"
                             class="border rounded !border-zinc-400 !px-3 !py-1 placeholder:!text-gray-400"
                         />

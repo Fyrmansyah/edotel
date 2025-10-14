@@ -9,6 +9,7 @@ use App\Models\PaymentMethod;
 use App\Models\Pricing;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Inertia\Inertia;
 
 class BookingController extends Controller
@@ -18,6 +19,25 @@ class BookingController extends Controller
         $pricings = Pricing::all()->keyBy('name');
 
         return Inertia::render('Client/FormBooking', compact('pricings'));
+    }
+
+    function findBooking()
+    {
+        return Inertia::render('Client/FindBooking');
+    }
+
+    function findBookingAction(Request $request)
+    {
+        $b = Booking::query()->where(function ($q) use ($request) {
+            $q->where('no_tlp', $request->keyword)
+                ->orWhere('booking_id', $request->keyword);
+        })->latest()->first();
+
+        if (!$b) {
+            return back()->with('error', 'Tidak menemukan daftar booking');
+        }
+
+        return redirect('/booking/' . $b->id);
     }
 
     function createBooking(BookingRequest $bookingRequest)
