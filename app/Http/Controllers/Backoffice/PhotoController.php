@@ -20,7 +20,8 @@ class PhotoController extends Controller
         return Inertia::render('Backoffice/Photo/Index', compact('photos'));
     }
 
-    public function create() {
+    public function create()
+    {
         $photos = Photo::all();
 
         return Inertia::render('Backoffice/Photo/Form', [
@@ -33,24 +34,27 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        $directory = 'photos';
+        try {
+            $directory = 'photos';
 
-        if ($request->hasFile('photos')) {
             if (Storage::directoryExists($directory)) {
                 Storage::deleteDirectory($directory);
                 Storage::createDirectory($directory);
+                Photo::truncate();
             }
 
-            Photo::truncate();
-
-            $photos = [];
-            foreach ($request->file('photos') as $p) {
-                $path = $p->store($directory);
-                array_push($photos, ['path' => $path]);
+            if ($request->hasFile('photos')) {
+                $photos = [];
+                foreach ($request->file('photos') as $p) {
+                    $path = $p->store($directory);
+                    array_push($photos, ['path' => $path]);
+                }
+                Photo::insert($photos);
             }
-            Photo::insert($photos);
+
+            return back()->with('success', 'Sukses upload photo');
+        } catch (\Throwable $th) {
+            dd($th);
         }
-
-        return back()->with('success', 'Sukses upload photo');
     }
 }
