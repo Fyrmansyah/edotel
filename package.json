@@ -17,6 +17,7 @@
     "dependencies": {
         "@inertiajs/vue3": "^2.1.5",
         "@vitejs/plugin-vue": "^6.0.1",
+        "apexcharts": "^3.49.1",
         "date-fns": "^4.1.0",
         "filepond": "^4.32.9",
         "filepond-plugin-file-validate-size": "^2.2.8",
@@ -25,6 +26,7 @@
         "filepond-plugin-image-validate-size": "^1.2.7",
         "sweetalert2": "^11.23.0",
         "swiper": "^12.0.2",
-        "vue-filepond": "^7.0.4"
+        "vue-filepond": "^7.0.4",
+        "vue3-apexcharts": "^1.5.3"
     }
 }
