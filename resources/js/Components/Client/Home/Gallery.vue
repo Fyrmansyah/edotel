@@ -1,10 +1,12 @@
 <script setup>
     import { Swiper, SwiperSlide } from "swiper/vue";
     import { Autoplay } from "swiper/modules";
+    import { inject } from "vue";
 
     import "swiper/css";
 
     defineProps({ photos: Array });
+    const showModalImg = inject("showModalImg");
 </script>
 
 <template>
@@ -21,15 +23,27 @@
             :loop="true"
             :modules="[Autoplay]"
             :autoplay="{ delay: 2500, disableOnInteraction: false }"
+            :breakpoints="{
+                0: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 25,
+                },
+            }"
         >
             <SwiperSlide v-for="p in photos">
                 <img
                     :key="'photo-' + p.id"
                     :src="'/storage/' + p.path"
-                    class="rounded w-full aspect-square object-cover"
-                    height="300"
-                    width="300"
-                    alt=""
+                    class="rounded w-full aspect-square object-cover cursor-zoom-in !border-8 border-white"
+                    @click="showModalImg('/storage/' + p.path)"
                 />
             </SwiperSlide>
         </Swiper>

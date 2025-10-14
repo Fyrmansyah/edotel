@@ -1,5 +1,9 @@
+<script setup lang="ts">
+    import { Link } from "@inertiajs/vue3";
+</script>
+
 <template>
-    <div class="banner__background relative w-full">
+    <div class="banner__background relative w-full" id="banner">
         <div class="banner__slider group overflow-hidden transition">
             <div class="swiper-wrapper">
                 <!-- single slider -->
@@ -18,24 +22,27 @@
                             class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
                         >
                             <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
-                                >Welcome to our spa</span
+                                >Welcome to eDotel</span
                             >
                             <h1
-                                class="anim-2 mb-[30px] mt-[20px] text-[1000px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
+                                class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
                             >
-                                Luxury Stay Hotel Experience Comfort & Elegance
+                                Kenyamanan dan Kehangatan Seperti di Rumah
                             </h1>
                             <p
-                                class="anim-3 mx-auto mb-[40px] max-w-[560px] text-sm leading-[28px] text-white"
+                                class="anim-3 mx-auto mb-[40px] max-w-3xl text-sm leading-[28px] text-white"
                             >
-                                Choosing Bokinn was one of the best decisions we've ever made. They
-                                have proven to be a reliable and innovative partner
+                                Menginap yang menyenangkan! Lokasinya sempurna untuk bertamasya, dan
+                                staf hotel membuat kami merasa seperti di rumah sendiri. Kamarnya
+                                bersih, luas, dan memiliki semua fasilitas yang kami butuhkan. Saya
+                                sangat merekomendasikannya!
                             </p>
-                            <a
+                            <Link
+                                href="/booking"
                                 class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
-                                href="#"
-                                >Discover Room</a
                             >
+                                Booking Sekarang
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -56,24 +63,27 @@
                             class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
                         >
                             <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
-                                >Welcome to our spa</span
+                                >Welcome to eDotel</span
                             >
                             <h1
                                 class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
                             >
-                                Luxury Stay Hotel Experience Comfort & Elegance
+                                Kenyamanan dan Kehangatan Seperti di Rumah
                             </h1>
                             <p
-                                class="anim-3 mx-auto mb-[40px] max-w-[560px] text-sm leading-[28px] text-white"
+                                class="anim-3 mx-auto mb-[40px] max-w-3xl text-sm leading-[28px] text-white"
                             >
-                                Choosing Bokinn was one of the best decisions we've ever made. They
-                                have proven to be a reliable and innovative partner
+                                Menginap yang menyenangkan! Lokasinya sempurna untuk bertamasya, dan
+                                staf hotel membuat kami merasa seperti di rumah sendiri. Kamarnya
+                                bersih, luas, dan memiliki semua fasilitas yang kami butuhkan. Saya
+                                sangat merekomendasikannya!
                             </p>
-                            <a
+                            <Link
+                                href="/booking"
                                 class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
-                                href="#"
-                                >Discover Room</a
                             >
+                                Booking Sekarang
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -94,24 +104,27 @@
                             class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
                         >
                             <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
-                                >Welcome to our spa</span
+                                >Welcome to eDotel</span
                             >
                             <h1
                                 class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
                             >
-                                Luxury Stay Hotel Experience Comfort & Elegance
+                                Kenyamanan dan Kehangatan Seperti di Rumah
                             </h1>
                             <p
-                                class="anim-3 mx-auto mb-[40px] max-w-[560px] text-sm leading-[28px] text-white"
+                                class="anim-3 mx-auto mb-[40px] max-w-3xl text-sm leading-[28px] text-white"
                             >
-                                Choosing Bokinn was one of the best decisions we've ever made. They
-                                have proven to be a reliable and innovative partner
+                                Menginap yang menyenangkan! Lokasinya sempurna untuk bertamasya, dan
+                                staf hotel membuat kami merasa seperti di rumah sendiri. Kamarnya
+                                bersih, luas, dan memiliki semua fasilitas yang kami butuhkan. Saya
+                                sangat merekomendasikannya!
                             </p>
-                            <a
+                            <Link
+                                href="/booking"
                                 class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
-                                href="#"
-                                >Discover Room</a
                             >
+                                Booking Sekarang
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -132,24 +145,27 @@
                             class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
                         >
                             <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
-                                >Welcome to our spa</span
+                                >Welcome to eDotel</span
                             >
                             <h1
                                 class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
                             >
-                                Luxury Stay Hotel Experience Comfort & Elegance
+                                Kenyamanan dan Kehangatan Seperti di Rumah
                             </h1>
                             <p
-                                class="anim-3 mx-auto mb-[40px] max-w-[560px] text-sm leading-[28px] text-white"
+                                class="anim-3 mx-auto mb-[40px] max-w-3xl text-sm leading-[28px] text-white"
                             >
-                                Choosing Bokinn was one of the best decisions we've ever made. They
-                                have proven to be a reliable and innovative partner
+                                Menginap yang menyenangkan! Lokasinya sempurna untuk bertamasya, dan
+                                staf hotel membuat kami merasa seperti di rumah sendiri. Kamarnya
+                                bersih, luas, dan memiliki semua fasilitas yang kami butuhkan. Saya
+                                sangat merekomendasikannya!
                             </p>
-                            <a
+                            <Link
+                                href="/booking"
                                 class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
-                                href="#"
-                                >Discover Room</a
                             >
+                                Booking Sekarang
+                            </Link>
                         </div>
                     </div>
                 </div>

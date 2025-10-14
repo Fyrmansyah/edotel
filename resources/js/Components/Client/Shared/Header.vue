@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
-
+    import { Link } from "@inertiajs/vue3";
 </script>
 
 <template>
@@ -10,14 +9,14 @@ import { Link } from '@inertiajs/vue3';
             <div class="container mx-auto py-[10px]">
                 <div class="flex items-center justify-between">
                     <div class="flex gap-[25px]">
-                        <a class="flex gap-[10px] items-center text-xs" href="callto:#">
+                        <a class="flex gap-[10px] items-center text-xs" href="callto:0895417300072">
                             <i class="flaticon-phone-flip relative top-[3px]"></i>
                             +62 895-4173-00072
                         </a>
-                        <a class="flex gap-[10px] items-center text-xs" href="mailto:#">
+                        <!-- <a class="flex gap-[10px] items-center text-xs" href="mailto:#">
                             <i class="flaticon-envelope relative top-[3px]"></i>
                             test@gmail.com
-                        </a>
+                        </a> -->
                     </div>
                     <div>
                         <a class="flex gap-[10px] items-center text-xs" href="#">
@@ -41,18 +40,34 @@ import { Link } from '@inertiajs/vue3';
                             <nav class="navigation__menu" id="main__menu">
                                 <ul class="list-unstyled">
                                     <li class="navigation__menu--item has-child before:!text-white">
-                                        <a href="#" class="navigation__menu--item__link !text-white"
+                                        <a
+                                            href="#banner"
+                                            class="navigation__menu--item__link !text-white"
                                             >Home</a
                                         >
                                     </li>
+                                    <li
+                                        class="navigation__menu--item has-child before:!text-white whitespace-nowrap"
+                                    >
+                                        <a
+                                            href="#about-us"
+                                            class="navigation__menu--item__link !text-white"
+                                        >
+                                            About Us
+                                        </a>
+                                    </li>
 
                                     <li class="navigation__menu--item has-child before:!text-white">
-                                        <a href="#" class="navigation__menu--item__link !text-white"
-                                            >Rooms
+                                        <a
+                                            href="#pricings"
+                                            class="navigation__menu--item__link !text-white"
+                                            >Pricings
                                         </a>
                                     </li>
                                     <li class="navigation__menu--item has-child before:!text-white">
-                                        <a href="#" class="navigation__menu--item__link !text-white"
+                                        <a
+                                            href="#facilities"
+                                            class="navigation__menu--item__link !text-white"
                                             >Facilities
                                         </a>
                                     </li>
@@ -60,7 +75,7 @@ import { Link } from '@inertiajs/vue3';
                                     <li class="navigation__menu--item">
                                         <a
                                             class="navigation__menu--item__link !text-white"
-                                            href="contact.html"
+                                            href="#contact"
                                             >Contact</a
                                         >
                                     </li>
@@ -91,20 +106,9 @@ import { Link } from '@inertiajs/vue3';
                         >
                             Sign Up
                         </button> -->
-                        <Link
-                            class="theme-btn btn-style sm-btn fill rounded-[0]"
-                            href="/booking"
-                        >
+                        <Link class="theme-btn btn-style sm-btn fill rounded-[0]" href="/booking">
                             <span class="!text-white">Book Now</span>
                         </Link>
-                        <button
-                            class="theme-btn btn-style sm-btn fill menu__btn rounded-[0] lg:hidden block"
-                            id="menu__btn"
-                        >
-                            <span
-                                ><img :src="'/client/assets/images/icon/menu-icon.svg'" alt=""
-                            /></span>
-                        </button>
                     </div>
                 </div>
             </div>

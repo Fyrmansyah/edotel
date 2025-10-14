@@ -1,5 +1,5 @@
 <template>
-    <div class="relative bg-white pt-[60px]">
+    <div class="relative bg-white pt-[60px]" id="contact">
         <div class="container">
             <div
                 class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] lg:flex justify-between mb-[40px] relative z-[1]"
@@ -7,16 +7,15 @@
                 <div class="rts__widget">
                     <a href="index.html">
                         <img
-                            class="footer__logo max-w-[50px]"
+                            class="footer__logo !max-w-[120px] lg:!max-w-[250px]"
                             :src="'/shared/images/logo.png'"
                             alt="footer logo"
-                            style="max-width: 250px"
                         />
                     </a>
-                    <p class="max-w-[290px] mt-[20px]">
-                        Tentang hotel, Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Error, possimus odio! Modi ea quisquam eveniet cum velit cumque? Tempora et
-                        consequuntur
+                    <p class="lg:max-w-[290px] mt-[20px]">
+                        SMESA Edotel Syariah Surabaya - Laboratorium Perhotelan SMKN 1 Surabaya.
+                        Terbuka untuk umum dengan fasilitas amenities, coffee corner, parkir, dan
+                        Wi-Fi.
                     </p>
                 </div>
 
@@ -40,18 +39,18 @@
                             <a
                                 class="flex gap-2 items-center"
                                 aria-label="footer__contact"
-                                href="tel:+12505550199"
-                                ><i class="flaticon-phone-flip"></i> +62 0895-4173-00072
+                                href="tel:0895417300072"
+                                ><i class="flaticon-phone-flip"></i> +62 895-4173-00072
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a
                                 class="flex gap-2 items-center"
                                 aria-label="footer__contact"
                                 href="mailto:UjJw6@example.com"
                                 ><i class="flaticon-envelope"></i>test@gmail.com</a
                             >
-                        </li>
+                        </li> -->
                         <li>
                             <a class="flex gap-2 items-center" aria-label="footer__contact" href="#"
                                 ><i class="flaticon-marker"></i>Jl. Smea No.4, Wonokromo, Kec.
@@ -76,13 +75,13 @@
                 </div>
             </div>
         </div>
-        <div class="border-t-[1px] border-[#65676B] border-opacity-20 p-[40px_0] relative z-10">
+        <div
+            class="border-t-[1px] border-[#65676B] border-opacity-20 p-[40px_0] !py-[12px] relative z-10"
+        >
             <div class="container">
-                <div
-                    class="flex flex-wrap md:justify-between justify-center items-center gap-[30px]"
-                >
+                <div class="flex flex-wrap justify-center items-center gap-[30px]">
                     <p class="mb-0">Copyright © 2025 eDotel. All rights reserved.</p>
-                    <div class="flex items-center gap-[30px]">
+                    <!-- <div class="flex items-center gap-[30px]">
                         <a class="pr-[25px] border-r-[1px] border-[#65676b] leading-4" href="#"
                             >Facebook</a
                         >
@@ -90,7 +89,7 @@
                             >Instagram</a
                         >
                         <a class="leading-4" href="#">Twitter</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
