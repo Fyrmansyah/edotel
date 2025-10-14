@@ -42,7 +42,10 @@
 <template>
     <PageHeader>
         <Breadcrumb :paths="[{ label: 'Photo', href: '/admin/photos' }, { label: 'Upload' }]" />
-        <Button variant="primary" :is-loading="isSubmitting" @click="submit">Submit</Button>
+        <div class="flex gap-2">
+            <Button variant="secondary" @click="files = []">Reset</Button>
+            <Button variant="primary" :is-loading="isSubmitting" @click="submit">Submit</Button>
+        </div>
     </PageHeader>
     <FilePond
         name="photos"
