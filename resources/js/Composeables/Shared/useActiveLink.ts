@@ -9,5 +9,10 @@ export const useActiveLink = () => {
         }
     }
 
-    return { isActive };
+    function isDashboardActive() {
+        const path = page.url.split("?")[0];
+        return path === "/admin" ? "active" : "";
+    }
+
+    return { isActive, isDashboardActive };
 };

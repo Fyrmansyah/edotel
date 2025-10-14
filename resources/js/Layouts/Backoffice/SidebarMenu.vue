@@ -2,7 +2,7 @@
     import { Link } from "@inertiajs/vue3";
     import { useActiveLink } from "../../Composeables/Shared/useActiveLink";
 
-    const { isActive } = useActiveLink();
+    const { isActive, isDashboardActive } = useActiveLink();
 </script>
 
 <template>
@@ -98,7 +98,7 @@
 
         <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item" :class="isActive('/admin')">
+            <li class="menu-item" :class="isDashboardActive()">
                 <Link href="/admin" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-home-circle"></i>
                     <div data-i18n="Analytics">Dashboard</div>
