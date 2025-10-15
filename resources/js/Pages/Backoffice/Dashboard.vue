@@ -5,10 +5,13 @@
     import AppLayout from "../../Layouts/Backoffice/AppLayout.vue";
     import { format } from "date-fns";
     import { formatToIdr } from "../../Helpers/shared";
-    import { router } from "@inertiajs/vue3";
+    import { router, usePage } from "@inertiajs/vue3";
 
     const props = defineProps({ date: String, kpis: Object, chart: Object });
     defineOptions({ layout: AppLayout });
+
+    const page = usePage();
+    console.log(page.props.auth);
 
     const currentDate = ref(props.date || format(new Date(), "yyyy-MM"));
     watch(currentDate, (val) => {

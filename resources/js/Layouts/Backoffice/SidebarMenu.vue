@@ -1,8 +1,10 @@
-<script setup lang="ts">
-    import { Link } from "@inertiajs/vue3";
+<script setup>
+    import { Link, usePage } from "@inertiajs/vue3";
     import { useActiveLink } from "../../Composeables/Shared/useActiveLink";
+    import { useAuth } from "../../Composeables/Backoffice/useAuth";
 
     const { isActive, isDashboardActive } = useActiveLink();
+    const auth = useAuth();
 </script>
 
 <template>
@@ -141,7 +143,10 @@
                 </ul>
             </li> -->
 
-            <li class="menu-item" :class="isActive('/admin/accounts')">
+            <li
+                class="menu-item"
+                :class="[isActive('/admin/accounts'), auth.hideIfNotSuperadmin()]"
+            >
                 <Link href="/admin/accounts" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-user"></i>
                     <div data-i18n="Tables">Account</div>
