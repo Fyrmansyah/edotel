@@ -183,7 +183,7 @@
                     <div class="flex flex-col gap-3">
                         <div class="flex items-center gap-2 my-2">
                             <div class="h-[1px] bg-gray-300 flex-1"></div>
-                            <p class="text-gray-600">Booking Summary</p>
+                            <p class="text-gray-600">Ringkasan</p>
                             <div class="h-[1px] bg-gray-300 flex-1"></div>
                         </div>
                         <div class="border !border-gray-200 p-3 rounded-lg">
@@ -258,7 +258,7 @@
                     type="button"
                     class="w-full !mt-8"
                 >
-                    Submit
+                    Kirim
                 </Button>
             </div>
         </div>

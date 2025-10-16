@@ -47,8 +47,8 @@
         </div>
         <div class="container">
             <div class="text-center mb-[60px]">
-                <span class="subtitle font-glida heading-6 heading text-primary">Tulis Review</span>
-                <h2 class="text-heading mt-[15px]">Review</h2>
+                <span class="subtitle font-glida heading-6 heading text-primary">Tulis Ulasan</span>
+                <h2 class="text-heading mt-[15px]">Ulasan</h2>
             </div>
             <div class="flex flex-col gap-3">
                 <div class="flex gap-3">
@@ -94,7 +94,7 @@
             </div>
             <div class="flex justify-end mt-4">
                 <Button class="rounded" :is-loading="isSubmitting" @click="handleSubmit">
-                    <span class="!text-white">Submit</span>
+                    <span class="!text-white">Kirim</span>
                 </Button>
             </div>
         </div>

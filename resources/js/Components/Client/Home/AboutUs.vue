@@ -11,7 +11,7 @@
         </div>
         <div class="container">
             <div class="mb-[100px] text-center">
-                <span class="subtitle font-glida heading-4 heading text-primary">About Us</span>
+                <span class="subtitle font-glida heading-4 heading text-primary">Tentang Kami</span>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                 <div class="wow fadeInUp">

@@ -13,8 +13,8 @@
     <div class="relative bg-gray p-[80px_0] lg:p-[120px_0]">
         <div class="container">
             <div class="text-center mb-[40px]">
-                <span class="subtitle font-glida heading-6 heading text-primary">Gallery</span>
-                <h2 class="text-heading mt-[15px]">Gallery Photo</h2>
+                <span class="subtitle font-glida heading-6 heading text-primary">Galeri</span>
+                <h2 class="text-heading mt-[15px]">Galeri Foto</h2>
             </div>
         </div>
         <Swiper

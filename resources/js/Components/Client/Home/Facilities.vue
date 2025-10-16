@@ -5,8 +5,8 @@
         </div>
         <div class="container">
             <div class="mb-[40px] text-center">
-                <span class="subtitle font-glida heading-6 heading text-primary">Facilities</span>
-                <h2 class="text-heading mt-[15px]">Hotel Facilities</h2>
+                <span class="subtitle font-glida heading-6 heading text-primary">Fasilitas</span>
+                <h2 class="text-heading mt-[15px]">Fasilitas Hotel</h2>
             </div>
             <div class="grid grid-cols-1 gap-[25px] md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
                 <div class="rounded-[10px] bg-white px-[30px] py-[40px] text-center transition">
@@ -15,9 +15,7 @@
                         :src="'/client/assets/images/icon/bed.svg'"
                         alt="icon"
                     />
-                    <a class="heading-6 heading text-heading mb-[15px] block" href="#"
-                        >Rooms and Suites</a
-                    >
+                    <a class="heading-6 heading text-heading mb-[15px] block" href="#">Kamar</a>
                     <p>
                         Kamar yang nyaman, bersih, dan ber-AC dengan kasur empuk untuk tidur lebih
                         nyenyak.
@@ -30,7 +28,7 @@
                         alt="icon"
                     />
                     <a class="heading-6 heading text-heading mb-[15px] block" href="#"
-                        >24-Hour Security</a
+                        >Keamanan 24-jam</a
                     >
                     <p>
                         Keamanan terjaga 24 jam penuh dengan sistem pengawasan modern dan staf

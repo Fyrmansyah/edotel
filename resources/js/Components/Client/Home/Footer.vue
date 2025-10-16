@@ -32,7 +32,7 @@
                 </div> -->
                 <div class="rts__widget">
                     <span class="block text-[20px] heading text-heading capitalize mb-[20px]"
-                        >Contact Us</span
+                        >Kontak Kami</span
                     >
                     <ul class="flex flex-col gap-[10px]">
                         <li>
@@ -80,7 +80,7 @@
         >
             <div class="container">
                 <div class="flex flex-wrap justify-center items-center gap-[30px]">
-                    <p class="mb-0">Copyright © 2025 eDotel. All rights reserved.</p>
+                    <p class="mb-0">Copyright © 2025 eDotel</p>
                     <!-- <div class="flex items-center gap-[30px]">
                         <a class="pr-[25px] border-r-[1px] border-[#65676b] leading-4" href="#"
                             >Facebook</a

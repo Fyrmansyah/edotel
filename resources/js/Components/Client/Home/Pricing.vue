@@ -13,7 +13,7 @@
         </div>
         <div class="container">
             <div class="text-center mb-[40px]">
-                <span class="subtitle font-glida heading-6 heading text-primary">Pricing</span>
+                <span class="subtitle font-glida heading-6 heading text-primary">Harga</span>
                 <h2 class="text-heading mt-[15px]">Daftar Harga</h2>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">

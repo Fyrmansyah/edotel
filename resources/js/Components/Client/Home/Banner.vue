@@ -22,7 +22,7 @@
                             class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
                         >
                             <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
-                                >Welcome to eDotel</span
+                                >Selamat datang di eDotel</span
                             >
                             <h1
                                 class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
@@ -71,7 +71,7 @@
                             class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
                         >
                             <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
-                                >Welcome to eDotel</span
+                                >Selamat datang di eDotel</span
                             >
                             <h1
                                 class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
@@ -112,7 +112,7 @@
                             class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
                         >
                             <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
-                                >Welcome to eDotel</span
+                                >Selamat datang di eDotel</span
                             >
                             <h1
                                 class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"
@@ -153,7 +153,7 @@
                             class="porse relative z-20 py-[80px] text-center md:py-[120px] lg:py-[150px] xl:py-[210px]"
                         >
                             <span class="anim-1 subtitle font-glida text-[16px] sm:text-sm"
-                                >Welcome to eDotel</span
+                                >Selamat datang di eDotel</span
                             >
                             <h1
                                 class="anim-2 mb-[30px] mt-[20px] text-[40px] leading-[50px] text-white md:text-[60px] md:leading-[70px] lg:text-[70px] lg:leading-[85px] xl:text-[80px] xl:leading-[90px]"

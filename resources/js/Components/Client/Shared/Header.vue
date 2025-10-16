@@ -43,7 +43,7 @@
                                         <a
                                             href="#banner"
                                             class="navigation__menu--item__link !text-white"
-                                            >Home</a
+                                            >Beranda</a
                                         >
                                     </li>
                                     <li
@@ -53,7 +53,7 @@
                                             href="#about-us"
                                             class="navigation__menu--item__link !text-white"
                                         >
-                                            About Us
+                                            Tentang Kami
                                         </a>
                                     </li>
 
@@ -61,14 +61,14 @@
                                         <a
                                             href="#pricings"
                                             class="navigation__menu--item__link !text-white"
-                                            >Pricings
+                                            >Harga
                                         </a>
                                     </li>
                                     <li class="navigation__menu--item has-child before:!text-white">
                                         <a
                                             href="#facilities"
                                             class="navigation__menu--item__link !text-white"
-                                            >Facilities
+                                            >Fasilitas
                                         </a>
                                     </li>
 
@@ -76,7 +76,7 @@
                                         <a
                                             class="navigation__menu--item__link !text-white"
                                             href="#contact"
-                                            >Contact</a
+                                            >Kontak</a
                                         >
                                     </li>
                                 </ul>
@@ -113,7 +113,7 @@
                             <span class="!text-white">Lihat Booking</span>
                         </Link>
                         <Link class="theme-btn btn-style sm-btn fill rounded-[0]" href="/booking">
-                            <span class="!text-white">Book Now</span>
+                            <span class="!text-white">Booking</span>
                         </Link>
                     </div>
                 </div>
