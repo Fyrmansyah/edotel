@@ -22,12 +22,12 @@ class BookingRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'string|required',
-            'no_tlp' => 'string|required',
-            'check_in' => 'date|required',
-            'check_out' => 'date|required',
-            'jml_orang' => 'integer|required',
-            'jenis_kamar' => 'string|required',
+            'name' => 'required|string',
+            'no_tlp' => 'required|string',
+            'check_in' => 'required|date',
+            'check_out' => 'required|date',
+            'jml_orang' => 'required|integer',
+            'jenis_kamar' => 'required|string',
             'extra_kasur' => 'integer|nullable',
             'extra_makan' => 'integer|nullable',
         ];
