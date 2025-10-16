@@ -157,7 +157,10 @@
                 <span class="menu-header-text">Manage</span>
             </li>
             <!-- Cards -->
-            <li class="menu-item" :class="isActive('/admin/pricings')">
+            <li
+                class="menu-item"
+                :class="[isActive('/admin/pricings'), auth.hideIfNotSuperadmin()]"
+            >
                 <Link href="/admin/pricings" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-money"></i>
                     <div data-i18n="Basic">Pricing</div>
