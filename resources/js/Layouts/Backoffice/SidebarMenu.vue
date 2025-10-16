@@ -113,18 +113,18 @@
             >
                 <Link href="/admin/accounts" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-user"></i>
-                    <div data-i18n="Tables">Account</div>
+                    <div data-i18n="Tables">Akun</div>
                 </Link>
             </li>
             <li class="menu-item" :class="[isActive('/admin/reviews'), auth.hideIfNotSuperadmin()]">
                 <Link href="/admin/reviews" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-message-square-dots"></i>
-                    <div data-i18n="Tables">Review</div>
+                    <div data-i18n="Tables">Ulasan</div>
                 </Link>
             </li>
             <!-- Components -->
             <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">Manage</span>
+                <span class="menu-header-text">Manajemen</span>
             </li>
             <!-- Cards -->
             <li
@@ -133,19 +133,19 @@
             >
                 <Link href="/admin/pricings" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-money"></i>
-                    <div data-i18n="Basic">Pricing</div>
+                    <div data-i18n="Basic">Harga</div>
                 </Link>
             </li>
             <li class="menu-item" :class="isActive('/admin/bookings')">
                 <Link href="/admin/bookings" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-bed"></i>
-                    <div data-i18n="Basic">Bookings</div>
+                    <div data-i18n="Basic">Booking</div>
                 </Link>
             </li>
-            <li class="menu-item" :class="isActive('/admin/photos')">
+            <li class="menu-item" :class="[isActive('/admin/photos'), auth.hideIfNotSuperadmin()]">
                 <Link href="/admin/photos" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-camera"></i>
-                    <div data-i18n="Tables">Photos</div>
+                    <div data-i18n="Tables">Foto</div>
                 </Link>
             </li>
             <li class="menu-header small text-uppercase">

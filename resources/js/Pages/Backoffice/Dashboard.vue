@@ -41,13 +41,13 @@
         <div class="grid grid-cols-3 h-fit mb-3 gap-3">
             <div class="card h-fit">
                 <div class="card-body">
-                    <h4 class="!font-normal">Total Created Booking</h4>
+                    <h4 class="!font-normal">Total Booking Terbuat</h4>
                     <h1 class="!font-bold mb-0">{{ kpis.total_created_booking }}</h1>
                 </div>
             </div>
             <div class="card h-fit">
                 <div class="card-body">
-                    <h4 class="!font-normal">Total Rejected Booking</h4>
+                    <h4 class="!font-normal">Total Boking Ditolak</h4>
                     <h1 class="!font-bold mb-0">{{ kpis.total_cancelled_booking }}</h1>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                         xaxis: {
                             categories: chart.categories,
                         },
-                        title: { text: 'Total Booking Chart' },
+                        title: { text: 'Chart Pendapatan' },
                         dataLabels: {
                             enabled: false,
                         },

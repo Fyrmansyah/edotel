@@ -158,7 +158,7 @@
 
 <template>
     <PageHeader>
-        <Breadcrumb :paths="[{ label: 'Booking' }, { label: 'Listing' }]" />
+        <Breadcrumb :paths="[{ label: 'Daftar Booking' }]" />
         <div class="flex items-end gap-3">
             <div>
                 <label>Check In</label>

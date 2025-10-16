@@ -48,7 +48,7 @@
 </script>
 <template>
     <PageHeader>
-        <Breadcrumb :paths="[{ label: 'Accounts' }, { label: 'Superadmin' }]" />
+        <Breadcrumb :paths="[{ label: 'Daftar Akun' }]" />
         <button
             class="btn btn-primary"
             data-bs-toggle="modal"

@@ -54,7 +54,7 @@
 
 <template>
     <PageHeader>
-        <Breadcrumb :paths="[{ label: 'Pricing' }, { label: 'listing' }]" />
+        <Breadcrumb :paths="[{ label: 'Daftar Harga' }]" />
     </PageHeader>
     <div class="grid grid-cols-4 gap-4">
         <Card v-for="p in pricings">

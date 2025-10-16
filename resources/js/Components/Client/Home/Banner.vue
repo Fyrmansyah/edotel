@@ -86,12 +86,20 @@
                                 bersih, luas, dan memiliki semua fasilitas yang kami butuhkan. Saya
                                 sangat merekomendasikannya!
                             </p>
-                            <Link
-                                href="/booking"
-                                class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
-                            >
-                                Booking Sekarang
-                            </Link>
+                            <div class="flex flex-col gap-3 max-w-sm mx-auto">
+                                <Link
+                                    href="/booking"
+                                    class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
+                                >
+                                    Booking Sekarang
+                                </Link>
+                                <Link
+                                    href="/booking/find"
+                                    class="anim-4 underline btn-style text-white rounded-[6px] !border-0 !py-[10px]"
+                                >
+                                    Cek Booking Anda
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,12 +135,20 @@
                                 bersih, luas, dan memiliki semua fasilitas yang kami butuhkan. Saya
                                 sangat merekomendasikannya!
                             </p>
-                            <Link
-                                href="/booking"
-                                class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
-                            >
-                                Booking Sekarang
-                            </Link>
+                            <div class="flex flex-col gap-3 max-w-sm mx-auto">
+                                <Link
+                                    href="/booking"
+                                    class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
+                                >
+                                    Booking Sekarang
+                                </Link>
+                                <Link
+                                    href="/booking/find"
+                                    class="anim-4 underline btn-style text-white rounded-[6px] !border-0 !py-[10px]"
+                                >
+                                    Cek Booking Anda
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -168,12 +184,20 @@
                                 bersih, luas, dan memiliki semua fasilitas yang kami butuhkan. Saya
                                 sangat merekomendasikannya!
                             </p>
-                            <Link
-                                href="/booking"
-                                class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
-                            >
-                                Booking Sekarang
-                            </Link>
+                            <div class="flex flex-col gap-3 max-w-sm mx-auto">
+                                <Link
+                                    href="/booking"
+                                    class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
+                                >
+                                    Booking Sekarang
+                                </Link>
+                                <Link
+                                    href="/booking/find"
+                                    class="anim-4 underline btn-style text-white rounded-[6px] !border-0 !py-[10px]"
+                                >
+                                    Cek Booking Anda
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

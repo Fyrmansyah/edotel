@@ -41,7 +41,7 @@
 
 <template>
     <PageHeader>
-        <Breadcrumb :paths="[{ label: 'Photo', href: '/admin/photos' }, { label: 'Upload' }]" />
+        <Breadcrumb :paths="[{ label: 'Daftar Foto' }]" />
         <div class="flex gap-2">
             <Button variant="secondary" @click="files = []">Reset</Button>
             <Button variant="primary" :is-loading="isSubmitting" @click="submit">Submit</Button>

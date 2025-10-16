@@ -26,7 +26,7 @@
                         />
                     </div>
                     <div class="p-[30px_30px_30px_40px]">
-                        <div class="heading heading-4 text-white mb-[20px] block">Kamar Medium</div>
+                        <div class="heading heading-4 text-white mb-[20px] block">Kamar Sedang</div>
                         <ul class="grid grid-cols-1 gap-[20px] leading-none text-white">
                             <li class="flex items-center gap-2">
                                 <i class="flaticon-check-circle"></i> Kasur, Selimut, Bantal, dan
@@ -53,7 +53,7 @@
                         />
                     </div>
                     <div class="p-[30px_30px_30px_40px]">
-                        <div class="heading heading-4 text-white mb-[20px] block">Kamar Large</div>
+                        <div class="heading heading-4 text-white mb-[20px] block">Kamar Besar</div>
                         <ul class="grid grid-cols-1 gap-[20px] leading-none text-white">
                             <li class="flex items-center gap-2">
                                 <i class="flaticon-check-circle"></i> Kasur, Selimut, Bantal, dan
