@@ -35,6 +35,7 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
     Route::middleware(AuthAdminMiddleware::class)->group(function () {
         Route::get('/', [DashboardController::class, 'index']);
         Route::get('/reviews', [BackofficeReviewController::class, 'index']);
+        Route::delete('/reviews/{review}', [BackofficeReviewController::class, 'delete']);
 
         Route::get('/pricings', [PricingController::class, 'index']);
         Route::post('/pricings/{pricing}', [PricingController::class, 'update']);

@@ -17,4 +17,11 @@ class ReviewController extends Controller
 
         return Inertia::render('Backoffice/Review/Index', compact('reviews'));
     }
+
+    public function delete(Review $review)
+    {
+        $review->delete();
+
+        return back()->with('success', 'Sukses menghapus review');
+    }
 }
