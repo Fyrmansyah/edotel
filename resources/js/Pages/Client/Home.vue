@@ -9,6 +9,7 @@
     import Pricing from "../../Components/Client/Home/Pricing.vue";
     import ModalImage from "../../Components/Client/Home/ModalImage.vue";
     import { nextTick, provide, ref } from "vue";
+    import Review from "../../Components/Client/Home/Review.vue";
 
     defineProps({
         photos: Array,
@@ -34,6 +35,7 @@
     <Facilities />
     <Pricing :pricings="pricings" />
     <Gallery :photos="photos" />
+    <Review />
     <Footer />
     <ModalImage />
 </template>

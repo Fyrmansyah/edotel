@@ -116,6 +116,12 @@
                     <div data-i18n="Tables">Account</div>
                 </Link>
             </li>
+            <li class="menu-item" :class="[isActive('/admin/reviews'), auth.hideIfNotSuperadmin()]">
+                <Link href="/admin/reviews" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-message-square-dots"></i>
+                    <div data-i18n="Tables">Review</div>
+                </Link>
+            </li>
             <!-- Components -->
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">Manage</span>
