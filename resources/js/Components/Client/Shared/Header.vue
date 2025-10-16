@@ -33,7 +33,7 @@
         <div class="header transition header__function is__home__3">
             <div class="container">
                 <div
-                    class="grid grid-cols-2 lg:grid-cols-3 justify-center items-center py-4 lg:py-0"
+                    class="flex justify-between lg:!grid lg:grid-cols-3 lg:!justify-center items-center py-4 lg:py-0"
                 >
                     <div class="menu text-white hidden lg:block">
                         <div class="navigation d-none d-lg-block">
@@ -106,6 +106,12 @@
                         >
                             Sign Up
                         </button> -->
+                        <Link
+                            class="theme-btn btn-style sm-btn outline rounded-[0]"
+                            href="/booking/find"
+                        >
+                            <span class="!text-white">Lihat Booking</span>
+                        </Link>
                         <Link class="theme-btn btn-style sm-btn fill rounded-[0]" href="/booking">
                             <span class="!text-white">Book Now</span>
                         </Link>
