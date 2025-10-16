@@ -51,6 +51,30 @@ class Booking extends Model
         });
     }
 
+    public function dpPrice(): Attribute
+    {
+        return Attribute::make(get: function () {
+
+            if (!$this->check_in || !$this->check_out || !$this->harga_kamar) {
+                return 0;
+            }
+
+            $lama_menginap = Carbon::parse($this->check_out)->diffInDays(Carbon::parse($this->check_in), true);
+
+            $total = $lama_menginap * (int) $this->harga_kamar;
+
+            if ($this->extra_kasur && $this->extra_kasur_price) {
+                $total += $lama_menginap * $this->extra_kasur * (int) $this->extra_kasur_price;
+            }
+
+            if ($this->extra_makan && $this->extra_makan_price) {
+                $total += $this->extra_makan * (int) $this->extra_makan_price;
+            }
+
+            return $total / 2;
+        });
+    }
+
     public function totalPrice(): Attribute
     {
         return Attribute::make(get: function () {

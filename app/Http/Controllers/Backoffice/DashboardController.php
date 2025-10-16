@@ -25,9 +25,16 @@ class DashboardController extends Controller
         $total_created_booking = (clone $bookings)->count();
         $total_cancelled_booking = (clone $bookings)->where('status', Booking::STATUS_REJECTED)->count();
         $total_revenue = (clone $bookings)
-            ->where('status', Booking::STATUS_CHECKED_IN)
+            ->whereIn('status', [Booking::STATUS_CHECKED_IN, Booking::STATUS_CONFIRMED, Booking::STATUS_CHECKED_OUT])
             ->get()
-            ->sum(fn($booking) => $booking->total_price);
+            ->sum(function ($booking) {
+                if ($booking->status === Booking::STATUS_CHECKED_IN || $booking->status === Booking::STATUS_CHECKED_OUT) {
+                    return $booking->total_price;
+                } elseif ($booking->status === Booking::STATUS_CONFIRMED) {
+                    return $booking->dp_price;
+                }
+                return 0;
+            });
 
         $kpis = compact(
             'total_created_booking',
@@ -42,9 +49,16 @@ class DashboardController extends Controller
 
             $total = Booking::query()
                 ->whereDate('check_in', $d->format('Y-m-d'))
-                ->where('status', Booking::STATUS_CHECKED_IN)
+                ->whereIn('status', [Booking::STATUS_CHECKED_IN, Booking::STATUS_CONFIRMED, Booking::STATUS_CHECKED_OUT])
                 ->get()
-                ->sum(fn($booking) => $booking->total_price);
+                ->sum(function ($booking) {
+                    if ($booking->status === Booking::STATUS_CHECKED_IN || $booking->status === Booking::STATUS_CHECKED_OUT) {
+                        return $booking->total_price;
+                    } elseif ($booking->status === Booking::STATUS_CONFIRMED) {
+                        return $booking->dp_price;
+                    }
+                    return 0;
+                });
             $series_data->push($total);
         }
 
