@@ -13,21 +13,15 @@ class DashboardController extends Controller
 {
     public function index(Request $request)
     {
-        // ambil bulan dari request, jika tidak ada gunakan bulan sekarang
         $date = $request->get('date', now()->format('Y-m'));
 
-        // parsing bulan dan tahun dari input
         [$year, $month] = explode('-', $date);
         $start = Carbon::createFromDate($year, $month, 1)->startOfMonth();
         $end = Carbon::createFromDate($year, $month, 1)->endOfMonth();
 
-
         $bookings = Booking::query()
             ->whereBetween('check_in', [$start, $end]);
 
-
-        // === Contoh dummy data ===
-        // nanti bisa ganti ini dengan query ke database
         $total_created_booking = (clone $bookings)->count();
         $total_cancelled_booking = (clone $bookings)->where('status', Booking::STATUS_REJECTED)->count();
         $total_revenue = (clone $bookings)
