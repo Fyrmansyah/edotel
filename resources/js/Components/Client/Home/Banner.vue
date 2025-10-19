@@ -44,12 +44,6 @@
                                 >
                                     Booking Sekarang
                                 </Link>
-                                <Link
-                                    href="/booking/find"
-                                    class="anim-4 underline btn-style text-white rounded-[6px] !border-0 !py-[10px]"
-                                >
-                                    Cek Booking Anda
-                                </Link>
                             </div>
                         </div>
                     </div>
@@ -92,12 +86,6 @@
                                     class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
                                 >
                                     Booking Sekarang
-                                </Link>
-                                <Link
-                                    href="/booking/find"
-                                    class="anim-4 underline btn-style text-white rounded-[6px] !border-0 !py-[10px]"
-                                >
-                                    Cek Booking Anda
                                 </Link>
                             </div>
                         </div>
@@ -142,12 +130,6 @@
                                 >
                                     Booking Sekarang
                                 </Link>
-                                <Link
-                                    href="/booking/find"
-                                    class="anim-4 underline btn-style text-white rounded-[6px] !border-0 !py-[10px]"
-                                >
-                                    Cek Booking Anda
-                                </Link>
                             </div>
                         </div>
                     </div>
@@ -190,12 +172,6 @@
                                     class="anim-4 theme-btn fill btn-style rounded-[6px] !border-0 !py-[10px]"
                                 >
                                     Booking Sekarang
-                                </Link>
-                                <Link
-                                    href="/booking/find"
-                                    class="anim-4 underline btn-style text-white rounded-[6px] !border-0 !py-[10px]"
-                                >
-                                    Cek Booking Anda
                                 </Link>
                             </div>
                         </div>
