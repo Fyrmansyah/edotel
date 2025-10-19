@@ -11,6 +11,7 @@ use App\Http\Controllers\Backoffice\ReviewController as BackofficeReviewControll
 use App\Http\Controllers\Client\BookingController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ReviewController;
+use App\Http\Controllers\SettingController;
 use App\Http\Middleware\AuthAdminMiddleware;
 use App\Http\Middleware\BackofficeMiddleware;
 use App\Http\Middleware\ClientMiddleware;
@@ -50,5 +51,8 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
 
 
         Route::resource('photos', PhotoController::class)->only(['index', 'create', 'store']);
+
+        Route::get('/settings', [SettingController::class, 'index']);
+        Route::post('/settings', [SettingController::class, 'updateAudio']);
     });
 });

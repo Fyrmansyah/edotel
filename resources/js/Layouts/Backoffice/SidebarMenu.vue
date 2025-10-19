@@ -51,6 +51,15 @@
                     <div data-i18n="Tables">Ulasan</div>
                 </Link>
             </li>
+            <li
+                class="menu-item"
+                :class="[isActive('/admin/settings'), auth.hideIfNotSuperadmin()]"
+            >
+                <Link href="/admin/settings" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-cog"></i>
+                    <div data-i18n="Tables">Pengaturan</div>
+                </Link>
+            </li>
             <!-- Components -->
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">Manajemen</span>
