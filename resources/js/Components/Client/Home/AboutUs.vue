@@ -17,24 +17,24 @@
                 <div class="wow fadeInUp">
                     <img
                         class="jarallax-img rounded-xl w-full cursor-zoom-in"
-                        :src="'/client/assets/images/main/foto_depan.jpg'"
+                        :src="'/client/assets/images/main/foto_depan.webp'"
                         alt="about image"
-                        @click="showModalImg('/client/assets/images/main/foto_depan.jpg')"
+                        @click="showModalImg('/client/assets/images/main/foto_depan.webp')"
                     />
                     <div class="grid grid-cols-3 w-full gap-3 mt-3">
                         <img
-                            :src="'/client/assets/images/main/bartender.jpg'"
-                            @click="showModalImg('/client/assets/images/main/bartender.jpg')"
+                            :src="'/client/assets/images/main/bartender.webp'"
+                            @click="showModalImg('/client/assets/images/main/bartender.webp')"
                             class="w-full rounded-lg cursor-zoom-in"
                         />
                         <img
-                            :src="'/client/assets/images/main/tangga_loby.jpg'"
-                            @click="showModalImg('/client/assets/images/main/tangga_loby.jpg')"
+                            :src="'/client/assets/images/main/tangga_loby.webp'"
+                            @click="showModalImg('/client/assets/images/main/tangga_loby.webp')"
                             class="w-full rounded-lg cursor-zoom-in"
                         />
                         <img
-                            :src="'/client/assets/images/main/loby_admin.jpg'"
-                            @click="showModalImg('/client/assets/images/main/loby_admin.jpg')"
+                            :src="'/client/assets/images/main/loby_admin.webp'"
+                            @click="showModalImg('/client/assets/images/main/loby_admin.webp')"
                             class="w-full rounded-lg cursor-zoom-in"
                         />
                     </div>

@@ -13,7 +13,7 @@
                     >
                         <img
                             class="h-[100%] w-[100%] object-cover"
-                            :src="'/client/assets/images/main/bed-2.JPG'"
+                            :src="'/client/assets/images/main/bed-2.webp'"
                             alt=""
                         />
                     </div>
@@ -62,7 +62,7 @@
                     >
                         <img
                             class="h-[100%] w-[100%] object-cover"
-                            :src="'/client/assets/images/main/bed-1.JPG'"
+                            :src="'/client/assets/images/main/bed-1.webp'"
                             alt=""
                         />
                     </div>
@@ -111,7 +111,7 @@
                     >
                         <img
                             class="h-[100%] w-[100%] object-cover"
-                            :src="'/client/assets/images/main/bed-3.JPG'"
+                            :src="'/client/assets/images/main/bed-3.webp'"
                             alt=""
                         />
                     </div>
@@ -160,7 +160,7 @@
                     >
                         <img
                             class="h-[100%] w-[100%] object-cover"
-                            :src="'/client/assets/images/main/bed-4.JPG'"
+                            :src="'/client/assets/images/main/bed-4.webp'"
                             alt=""
                         />
                     </div>

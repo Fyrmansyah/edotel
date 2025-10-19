@@ -20,9 +20,9 @@
                 <div class="rounded-[10px] overflow-hidden xl:max-w-[532px] bg-heading xl:flex-col">
                     <div class="xl:flex-[unset]">
                         <img
-                            :src="'/client/assets/images/main/kamar_medium.jpg'"
+                            :src="'/client/assets/images/main/kamar_medium.webp'"
                             class="cursor-zoom-in"
-                            @click="showModalImg('/client/assets/images/main/kamar_medium.jpg')"
+                            @click="showModalImg('/client/assets/images/main/kamar_medium.webp')"
                         />
                     </div>
                     <div class="p-[30px_30px_30px_40px]">
@@ -47,9 +47,9 @@
                 <div class="rounded-[10px] overflow-hidden xl:max-w-[532px] bg-heading xl:flex-col">
                     <div class="xl:flex-[unset]">
                         <img
-                            :src="'/client/assets/images/main/kamar_large.jpg'"
+                            :src="'/client/assets/images/main/kamar_large.webp'"
                             class="cursor-zoom-in"
-                            @click="showModalImg('/client/assets/images/main/kamar_large.jpg')"
+                            @click="showModalImg('/client/assets/images/main/kamar_large.webp')"
                         />
                     </div>
                     <div class="p-[30px_30px_30px_40px]">
@@ -187,7 +187,7 @@
                     class="rounded-[10px] overflow-hidden xl:max-w-[532px] bg-heading lg:flex xl:flex-col"
                 >
                     <div class="lg:flex-1 xl:flex-[unset]">
-                        <img :src="'/client/assets/images/main/kamar.JPG'" alt="" />
+                        <img :src="'/client/assets/images/main/kamar.webp'" alt="" />
                     </a>
                     <div class="p-[30px_30px_30px_40px]">
                         <div class="heading heading-4 text-white mb-[20px] block"
@@ -215,7 +215,7 @@
                         class="rounded-[10px] overflow-hidden md:flex items-center bg-heading grid"
                     >
                         <img
-                            :src="'/client/assets/images/main/extra_kasur.JPG'"
+                            :src="'/client/assets/images/main/extra_kasur.webp'"
                             class="w-full h-full object-cover md:w-[265px]"
                             height="310"
                             width="265"
@@ -235,7 +235,7 @@
                         class="rounded-[10px] overflow-hidden md:flex items-center bg-heading grid"
                     >
                         <img
-                            :src="'/client/assets/images/main/extra_makanan.JPG'"
+                            :src="'/client/assets/images/main/extra_makanan.webp'"
                             class="w-full h-full object-cover md:w-[265px]"
                             height="310"
                             width="265"
