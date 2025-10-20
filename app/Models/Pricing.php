@@ -10,8 +10,8 @@ class Pricing extends Model
 {
     protected $guarded = ['id'];
 
-    const KAMAR_MEDIUM = 'Harga Kamar - Medium';
-    const KAMAR_LARGE = 'Harga Kamar - Large';
+    const KAMAR_MEDIUM = 'Harga Kamar - Sedang';
+    const KAMAR_LARGE = 'Harga Kamar - Besar';
     const EXTRA_MAKAN = 'Extra Makan';
     const EXTRA_KASUR = 'Extra Kasur';
 

@@ -1,6 +1,6 @@
 export const PRICING_KEY = {
-    kamar_medium: "Harga Kamar - Medium",
-    kamar_large: "Harga Kamar - Large",
+    kamar_medium: "Harga Kamar - Sedang",
+    kamar_large: "Harga Kamar - Besar",
     extra_makan: "Extra Makan",
     extra_kasur: "Extra Kasur",
 };
