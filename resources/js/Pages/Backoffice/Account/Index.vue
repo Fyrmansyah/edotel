@@ -5,7 +5,7 @@
     import Breadcrumb from "../../../Components/Backoffice/Shared/Navigations/Breadcrumb.vue";
     import PageHeader from "../../../Components/Backoffice/Shared/Navigations/PageHeader.vue";
     import Modal from "../../../Components/Backoffice/Shared/Modal/Modal.vue";
-    import { useForm } from "@inertiajs/vue3";
+    import { router, useForm } from "@inertiajs/vue3";
     import Input from "../../../Components/Backoffice/Shared/Forms/Input.vue";
     import InputPassword from "../../../Components/Backoffice/Shared/Forms/InputPassword.vue";
     import { ROUTE_API } from "../../../Routes/Api";
@@ -16,6 +16,7 @@
 
     const form = useForm({ username: null, password: null, role: "admin" });
     const editedAccount = ref(null);
+    const deletedAccount = ref(null);
 
     function handleEdit(account) {
         form.reset();
@@ -36,6 +37,7 @@
                     form.reset();
                 },
             });
+            editedAccount.value = null;
         } else {
             form.post(ROUTE_API.admin.accounts.create, {
                 onSuccess: () => {
@@ -44,6 +46,21 @@
                 },
             });
         }
+    }
+
+    function handleDelete(val) {
+        deletedAccount.value = val;
+        $("#modal-delete-account").modal("show");
+    }
+
+    function submitDelete() {
+        router.delete(ROUTE_API.admin.accounts.delete(deletedAccount.value.id), {
+            onSuccess: () => {
+                $("#modal-delete-account").modal("hide");
+                form.reset();
+            },
+        });
+        deletedAccount.value = null;
     }
 </script>
 <template>
@@ -74,7 +91,7 @@
                 <td>
                     <div class="flex gap-2">
                         <button class="btn btn-warning" @click="handleEdit(val)">edit</button>
-                        <button class="btn btn-danger">delete</button>
+                        <button class="btn btn-danger" @click="handleDelete(val)">delete</button>
                     </div>
                 </td>
             </tr>
@@ -82,7 +99,7 @@
     </Table>
     <Pagination :links="data?.links" />
 
-    <Modal id="modal-form-superadmin" title="Form Superadmin">
+    <Modal id="modal-form-superadmin" title="Form Account">
         <div class="flex-col flex gap-3">
             <Input label="username" v-model="form.username" :err-message="form.errors.username" />
             <InputPassword
@@ -103,6 +120,14 @@
         <template #footer>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" @click="submit" class="btn btn-primary">Save</button>
+        </template>
+    </Modal>
+    <Modal id="modal-delete-account" title="Delete Account">
+        <p>apa anda yakin untuk menghapus akun ini?</p>
+
+        <template #footer>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" @click="submitDelete" class="btn btn-danger">Delete</button>
         </template>
     </Modal>
 </template>
