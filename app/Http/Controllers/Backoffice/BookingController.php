@@ -42,8 +42,8 @@ class BookingController extends Controller
 
         $bookedRoomIds = Booking::whereNotNull('kamar_id')
             ->where(function ($q) use ($booking) {
-                $q->where('check_in', '<', $booking->check_out)
-                    ->where('check_out', '>', $booking->check_in);
+                $q->where('check_in', '<=', $booking->check_out)
+                    ->where('check_out', '>=', $booking->check_in);
             })
             ->pluck('kamar_id')
             ->toArray();
