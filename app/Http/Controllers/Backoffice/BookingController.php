@@ -34,26 +34,22 @@ class BookingController extends Controller
     public function availableRooms(Booking $booking)
     {
 
-        // Mapping jenis booking -> jenis kamar di DB
         $mapping = [
             'medium' => 'sedang',
             'large' => 'besar',
         ];
         $jenisKamar = $mapping[$booking->jenis_kamar] ?? $booking->jenis_kamar;
 
-        // Cari kamar yang sudah dibooking di rentang waktu itu
         $bookedRoomIds = Booking::whereNotNull('kamar_id')
             ->where(function ($q) use ($booking) {
-                $q->where('check_in', '<=', $booking->check_out)
-                    ->where('check_out', '>=', $booking->check_in);
+                $q->where('check_in', '<', $booking->check_out)
+                    ->where('check_out', '>', $booking->check_in);
             })
             ->pluck('kamar_id')
             ->toArray();
 
-        // Ambil semua kamar dengan jenis yang sama
         $rooms = Kamar::where('jenis', $jenisKamar)->get();
 
-        // Tandai mana yang available dan mana yang tidak
         $roomsWithAvailability = $rooms->map(function ($room) use ($bookedRoomIds) {
             return [
                 'id' => $room->id,
