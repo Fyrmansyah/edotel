@@ -18,9 +18,17 @@
     const editedAccount = ref(null);
     const deletedAccount = ref(null);
 
+    function handleCreate() {
+        form.resetAndClearErrors();
+        editedAccount.value = null;
+        deletedAccount.value = null;
+        $("#modal-form-superadmin").modal("show");
+    }
+
     function handleEdit(account) {
         form.reset();
         form.clearErrors();
+        deletedAccount.value = null;
         editedAccount.value = account;
         form.username = account.username;
         form.password = null;
@@ -49,6 +57,7 @@
     }
 
     function handleDelete(val) {
+        editedAccount.value = null;
         deletedAccount.value = val;
         $("#modal-delete-account").modal("show");
     }
@@ -66,13 +75,7 @@
 <template>
     <PageHeader>
         <Breadcrumb :paths="[{ label: 'Daftar Akun' }]" />
-        <button
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-form-superadmin"
-        >
-            Tambah Akun
-        </button>
+        <button class="btn btn-primary" @click="handleCreate">Tambah Akun</button>
     </PageHeader>
     <Table>
         <template #thead>

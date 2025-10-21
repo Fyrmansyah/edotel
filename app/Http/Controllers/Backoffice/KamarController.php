@@ -30,6 +30,13 @@ class KamarController extends Controller
         return back()->with('success', 'Sukses menambahkan kamar baru');
     }
 
+    public function update(Kamar $kamar, KamarRequest $request)
+    {
+        $kamar->update($request->validated());
+
+        return back()->with('success', 'Sukses memperbarui data');
+    }
+
     public function delete(Kamar $kamar)
     {
         try {

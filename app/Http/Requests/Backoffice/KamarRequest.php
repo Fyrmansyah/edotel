@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Backoffice;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class KamarRequest extends FormRequest
 {
@@ -22,7 +23,7 @@ class KamarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nomor' => 'required',
+            'nomor' => ['required', Rule::unique('kamars', 'nomor')->ignore($this->route('kamar'))],
             'jenis' => 'required',
         ];
     }

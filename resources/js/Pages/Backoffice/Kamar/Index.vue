@@ -12,14 +12,33 @@
 
     const isSubmitting = ref(false);
     const form = useForm({
-        nomor: null,
-        jenis: null,
+        nomor: "",
+        jenis: "",
     });
+
+    const editedKamar = ref(null);
     const deletedKamar = ref(null);
 
+    function handleCreate() {
+        form.reset();
+        form.clearErrors();
+        deletedKamar.value = null;
+        editedKamar.value = null;
+        $("#modal-form-kamar").modal("show");
+    }
+
     function handleDelete(val) {
+        editedKamar.value = null;
         deletedKamar.value = val;
         $("#modal-delete-kamar").modal("show");
+    }
+
+    function handleEdit(val) {
+        deletedKamar.value = null;
+        editedKamar.value = val;
+        form.nomor = val.nomor;
+        form.jenis = val.jenis;
+        $("#modal-form-kamar").modal("show");
     }
 
     function submitDelete() {
@@ -28,26 +47,35 @@
                 $("#modal-delete-kamar").modal("hide");
             },
         });
-        deletedAccount.value = null;
     }
 
     function handleSubmit() {
         isSubmitting.value = true;
-        form.post("/admin/kamar", {
-            onFinish: (isSubmitting.value = false),
-            onSuccess: () => {
-                $("#modal-form-kamar").modal("hide");
-                form.reset();
-            },
-        });
+        if (editedKamar.value) {
+            console.log("ok");
+
+            form.put("/admin/kamar/" + editedKamar.value?.id, {
+                onFinish: (isSubmitting.value = false),
+                onSuccess: () => {
+                    $("#modal-form-kamar").modal("hide");
+                    form.resetAndClearErrors();
+                },
+            });
+        } else {
+            form.post("/admin/kamar", {
+                onFinish: (isSubmitting.value = false),
+                onSuccess: () => {
+                    $("#modal-form-kamar").modal("hide");
+                    form.resetAndClearErrors();
+                },
+            });
+        }
     }
 </script>
 <template>
     <PageHeader>
         <Breadcrumb :paths="[{ label: 'Daftar Kamar' }]" />
-        <Button variant="primary" data-bs-toggle="modal" data-bs-target="#modal-form-kamar"
-            >Tambah Kamar</Button
-        >
+        <Button variant="primary" @click="handleCreate">Tambah Kamar</Button>
     </PageHeader>
     <div class="grid grid-cols-3 gap-3">
         <div class="card" v-for="k in kamars">
@@ -57,7 +85,9 @@
                     <h3 class="mb-0">Nomor: {{ k.nomor }}</h3>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <button><i class="bx bx-edit text-yellow-500"></i></button>
+                    <button @click="handleEdit(k)">
+                        <i class="bx bx-edit text-yellow-500"></i>
+                    </button>
                     <button @click="handleDelete(k)">
                         <i class="bx bx-trash text-red-500"></i>
                     </button>

@@ -59,6 +59,7 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
 
         Route::get('/kamar', [KamarController::class, 'index']);
         Route::post('/kamar', [KamarController::class, 'create']);
+        Route::put('/kamar/{kamar}', [KamarController::class, 'update']);
         Route::delete('/kamar/{kamar}', [KamarController::class, 'delete']);
     });
 });
