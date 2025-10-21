@@ -67,6 +67,8 @@ class BookingController extends Controller
     function bookingDetail(Booking $booking)
     {
         $qris = PaymentMethod::getQris();
-        return Inertia::render('Client/BookingDetail', compact('booking', 'qris'));
+        $admin_phone = config('app.admin_phone');
+
+        return Inertia::render('Client/BookingDetail', compact('booking', 'qris', 'admin_phone'));
     }
 }

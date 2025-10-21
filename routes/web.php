@@ -7,6 +7,7 @@ use App\Http\Controllers\Backoffice\PaymentMethodController;
 use App\Http\Controllers\Backoffice\PhotoController;
 use App\Http\Controllers\Backoffice\PricingController;
 use App\Http\Controllers\Backoffice\AccountController;
+use App\Http\Controllers\Backoffice\KamarController;
 use App\Http\Controllers\Backoffice\ReviewController as BackofficeReviewController;
 use App\Http\Controllers\Client\BookingController;
 use App\Http\Controllers\Client\HomeController;
@@ -47,6 +48,7 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
         Route::apiResource('accounts', AccountController::class);
 
         Route::get('/bookings', [BackofficeBookingController::class, 'index']);
+        Route::get('/bookings/available-rooms/{booking}', [BackofficeBookingController::class, 'availableRooms']);
         Route::post('/bookings/update/{booking}', [BackofficeBookingController::class, 'update']);
 
 
@@ -54,5 +56,9 @@ Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function 
 
         Route::get('/settings', [SettingController::class, 'index']);
         Route::post('/settings', [SettingController::class, 'updateAudio']);
+
+        Route::get('/kamar', [KamarController::class, 'index']);
+        Route::post('/kamar', [KamarController::class, 'create']);
+        Route::delete('/kamar/{kamar}', [KamarController::class, 'delete']);
     });
 });

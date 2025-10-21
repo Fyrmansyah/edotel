@@ -6,7 +6,7 @@
     import { BOOKING } from "../../Helpers/constant";
     import { format } from "date-fns";
 
-    const props = defineProps({ booking: Object, qris: Object });
+    const props = defineProps({ booking: Object, qris: Object, admin_phone: String });
 
     usePoll(2000);
 
@@ -165,13 +165,17 @@
                 <p class="text-white !text-xl font-bold">Booking ID: {{ booking.booking_id }}</p>
             </button>
             <div class="bg-white flex flex-col gap-2 items-center !shadow-md max-w-md">
-                <img :src="'/storage/' + qris.image" class="w-full" />
+                <img :src="'/storage/' + qris?.image" class="w-full" />
                 <div>
                     <p class="text-center text-black">Nominal yang harus dibayarkan</p>
                 </div>
                 <h2 class="font-bold text-black">
                     {{ formatToIdr(booking.total_price / 2) }}
                 </h2>
+                <p class="text-center max-w-[90%]">
+                    Harap kirim bukti pembayaran melalui whatsapp ke nomor berikut: <br />
+                </p>
+                <b class="bg-green-100 text-black px-2 py-1">{{ admin_phone }}</b>
                 <p class="text-center px-4 !text-[12px] leading-snug text-gray-500 !mb-5">
                     <span class="text-red-500">*</span> nominal diatas merupakan dp 50% dari total
                     biaya :
@@ -206,6 +210,7 @@
             <p class="text-white text-center max-w-2xl">
                 Maaf booking anda kami tidak dapat kami approved
             </p>
+            <p class="text-white text-center max-w-2xl"><b>alasan:</b> {{ booking?.admin_note }}</p>
         </div>
         <div v-else class="flex flex-col items-center justify-center flex-1">
             <div class="w-fit relative flex items-center justify-center">
@@ -226,7 +231,9 @@
                 ></div>
             </div>
 
-            <h1 class="text-white !mt-12 !mb-5">Pembayaran Berhasil</h1>
+            <h1 class="text-white !mt-12 !mb-5 text-center !text-3xl lg:!text-7xl">
+                Pembayaran Berhasil
+            </h1>
             <p class="text-white text-center max-w-2xl">
                 Admin kami telah mengkonfirmasi pembayaran anda. Terima Kasih
             </p>

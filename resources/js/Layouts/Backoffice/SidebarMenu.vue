@@ -65,6 +65,12 @@
                 <span class="menu-header-text">Manajemen</span>
             </li>
             <!-- Cards -->
+            <li class="menu-item" :class="[isActive('/admin/kamar'), auth.hideIfNotSuperadmin()]">
+                <Link href="/admin/kamar" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-door-open"></i>
+                    <div data-i18n="Basic">Kamar</div>
+                </Link>
+            </li>
             <li
                 class="menu-item"
                 :class="[isActive('/admin/pricings'), auth.hideIfNotSuperadmin()]"

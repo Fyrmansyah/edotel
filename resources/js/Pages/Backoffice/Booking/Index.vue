@@ -11,6 +11,7 @@
     import Modal from "../../../Components/Backoffice/Shared/Modal/Modal.vue";
     import { formatToIdr } from "../../../Helpers/shared";
     import { BOOKING } from "../../../Helpers/constant";
+    import axios from "axios";
 
     const TOTAL_BOOKINGS_KEY = "total-bookings";
 
@@ -25,11 +26,14 @@
     const audioPlayer = ref(null);
     const form = useForm({
         status: null,
+        kamar_id: null,
+        admin_note: null,
     });
     const selectedBooking = ref(null);
     const filterCheckIn = ref(null);
     const filterCheckOut = ref(null);
     const filterStatus = ref(null);
+    const availRooms = ref([]);
 
     watch([filterCheckIn, filterCheckOut, filterStatus], () => {
         let params = {};
@@ -148,7 +152,22 @@
         $("#modal-booking-reject").modal("hide");
         $("#modal-booking-aprove").modal("hide");
         form.status = status;
-        form.post(`/admin/bookings/update/${selectedBooking.value.id}`);
+        form.post(`/admin/bookings/update/${selectedBooking.value.id}`, {
+            onSuccess: () => {
+                form.reset();
+            },
+        });
+    }
+
+    function handleProcessBooking(val) {
+        selectedBooking.value = val;
+        axios
+            .get("/admin/bookings/available-rooms/" + val.id)
+            .then((res) => {
+                availRooms.value = res.data?.kamar;
+                console.log(res);
+            })
+            .catch((e) => console.log(e));
     }
 
     onMounted(() => {
@@ -273,7 +292,7 @@
                             data-bs-toggle="modal"
                             :disabled="b.status === BOOKING.status.checked_out"
                             data-bs-target="#modal-booking-aprove"
-                            @click="selectedBooking = b"
+                            @click="handleProcessBooking(b)"
                             class="whitespace-nowrap"
                             >{{ getBtnText(b.status) }}</Button
                         >
@@ -360,6 +379,25 @@
                 </tr>
             </template>
         </Table>
+        <div
+            class="mb-3 mt-4"
+            v-if="
+                selectedBooking?.status === BOOKING.status.pending ||
+                selectedBooking?.status === BOOKING.status.rejected
+            "
+        >
+            <label class="form-label">Pilih Kamar yang tersedia</label>
+            <select v-model="form.kamar_id" class="form-select">
+                <option
+                    v-for="k in availRooms"
+                    :class="{ 'text-gray-300': !k.is_available }"
+                    :disabled="!k.is_available"
+                    :value="k.id"
+                >
+                    Kamar #{{ k.nomor }}
+                </option>
+            </select>
+        </div>
         <template #footer>
             <Button
                 :variant="getBtnVariant(selectedBooking?.status)"
@@ -444,6 +482,12 @@
                 </tr>
             </template>
         </Table>
+        <div class="mb-3 mt-4">
+            <!-- terakhir disini belum bisa kasih alasan -->
+            <!-- @todo-next: tambahkan info "harap kirim bukti pembayaran ke nomor dibawah ini" -->
+            <label class="form-label">Alasan</label>
+            <textarea class="form-control" v-model="form.admin_note"></textarea>
+        </div>
         <template #footer>
             <Button variant="danger" @click="() => handleSubmit('rejected')">Reject</Button>
         </template>

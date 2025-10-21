@@ -123,4 +123,5 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'admin_phone' => env('ADMIN_PHONE', '+62 813-3021-9884'),
 ];

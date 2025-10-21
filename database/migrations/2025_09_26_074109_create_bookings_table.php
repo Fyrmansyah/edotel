@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Booking;
+use App\Models\Kamar;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->text('client_note')->nullable();
             $table->text('admin_note')->nullable();
             $table->boolean('is_present')->default(false);
+            $table->foreignIdFor(Kamar::class)->nullable();
             $table->timestamps();
         });
     }
