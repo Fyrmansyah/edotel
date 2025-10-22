@@ -232,13 +232,14 @@
                 <th>#</th>
                 <th>Status</th>
                 <th>Id</th>
-                <th>Created At</th>
+                <th>Tgl Pemesanan</th>
                 <th>Nama Customer</th>
                 <th>No Tlp</th>
                 <th>Check-in</th>
                 <th>Check-out</th>
                 <th>Jumlah Penginap</th>
                 <th>Jenis Kamar</th>
+                <th>Nomor Kamar</th>
                 <th>Action</th>
             </tr>
         </template>
@@ -277,6 +278,7 @@
                 <td class="whitespace-nowrap">{{ format(b.check_out, "d MMM y") }}</td>
                 <td>{{ b.jml_orang }} orang</td>
                 <td>{{ b.jenis_kamar }}</td>
+                <td>{{ b.kamar?.nomor ?? "-" }}</td>
                 <td>
                     <div class="flex gap-2">
                         <Button
@@ -483,8 +485,6 @@
             </template>
         </Table>
         <div class="mb-3 mt-4">
-            <!-- terakhir disini belum bisa kasih alasan -->
-            <!-- @todo-next: tambahkan info "harap kirim bukti pembayaran ke nomor dibawah ini" -->
             <label class="form-label">Alasan</label>
             <textarea class="form-control" v-model="form.admin_note"></textarea>
         </div>

@@ -14,6 +14,7 @@ class BookingController extends Controller
     function index(Request $request)
     {
         $bookings = Booking::query()
+            ->with('kamar')
             ->when($request->check_in, function ($query, $check_in) {
                 $query->where('check_in', '=', $check_in);
             })
