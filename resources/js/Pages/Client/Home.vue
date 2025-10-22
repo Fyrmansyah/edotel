@@ -14,6 +14,7 @@
     defineProps({
         photos: Array,
         pricings: Object,
+        admin_phone: String,
     });
 
     const imgPath = ref(null);
@@ -28,7 +29,7 @@
 </script>
 
 <template>
-    <Header />
+    <Header :admin_phone="admin_phone" />
     <Banner />
     <!-- <SearchBar /> -->
     <AboutUs />
@@ -36,6 +37,6 @@
     <Pricing :pricings="pricings" />
     <Gallery :photos="photos" />
     <Review />
-    <Footer />
+    <Footer :admin_phone="admin_phone" />
     <ModalImage />
 </template>

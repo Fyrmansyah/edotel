@@ -1,3 +1,6 @@
+<script setup>
+    defineProps({ admin_phone: String });
+</script>
 <template>
     <div class="relative bg-white pt-[60px]" id="contact">
         <div class="container">
@@ -40,7 +43,7 @@
                                 class="flex gap-2 items-center"
                                 aria-label="footer__contact"
                                 href="tel:0895417300072"
-                                ><i class="flaticon-phone-flip"></i> +62 895-4173-00072
+                                ><i class="flaticon-phone-flip"></i> {{ admin_phone }}
                             </a>
                         </li>
                         <!-- <li>

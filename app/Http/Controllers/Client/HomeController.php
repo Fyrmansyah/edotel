@@ -16,7 +16,8 @@ class HomeController extends Controller
         $pricings = Pricing::all()->mapWithKeys(fn($item) => [
             $item->name => $item->value
         ]);
+        $admin_phone = config('app.admin_phone');
 
-        return Inertia::render('Client/Home', compact('photos', 'pricings'));
+        return Inertia::render('Client/Home', compact('photos', 'pricings', 'admin_phone'));
     }
 }

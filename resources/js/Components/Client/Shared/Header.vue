@@ -1,5 +1,7 @@
 <script setup lang="ts">
     import { Link } from "@inertiajs/vue3";
+
+    defineProps({ admin_phone: String });
 </script>
 
 <template>
@@ -11,7 +13,7 @@
                     <div class="flex gap-[25px]">
                         <a class="flex gap-[10px] items-center text-xs" href="callto:0895417300072">
                             <i class="flaticon-phone-flip relative top-[3px]"></i>
-                            +62 895-4173-00072
+                            {{ admin_phone }}
                         </a>
                         <!-- <a class="flex gap-[10px] items-center text-xs" href="mailto:#">
                             <i class="flaticon-envelope relative top-[3px]"></i>
