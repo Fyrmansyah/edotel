@@ -24,7 +24,7 @@
     });
     const isCopiedBookingId = ref(false);
     const copyBookingId = () => {
-        navigator.clipboard.writeText(window.location.href);
+        navigator.clipboard.writeText(props.booking?.booking_id);
         isCopiedBookingId.value = true;
         Swal.fire({
             icon: "success",
