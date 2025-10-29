@@ -277,89 +277,109 @@
             >
                 <h6 class="font-bold text-black mb-4">Detail Booking Anda</h6>
                 <table class="w-full">
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">booking id</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">{{ booking?.booking_id }}</td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">nama pemesan</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">{{ booking?.name }}</td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">no tlp</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">{{ booking?.no_tlp }}</td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">check-in</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">
-                            {{ format(booking?.check_in, "d MMM y") }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">check-out</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">
-                            {{ format(booking?.check_out, "d MMM y") }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">lama menginap</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">
-                            {{ booking?.lama_menginap }} malam
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">jumlah orang</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">{{ booking?.jml_orang }}</td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">jenis kamar</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">
-                            {{ booking?.jenis_kamar }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">harga kamar</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">
-                            {{ formatToIdr(booking?.harga_kamar) }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">extra kasur</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">
-                            {{ booking?.detail_extra_kasur ?? "-" }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">extra makan</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">
-                            {{ booking?.detail_extra_makan ?? "-" }}
-                        </td>
-                    </tr>
-                    <tr class="font-bold">
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">Total</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">
-                            {{ formatToIdr(booking?.total_price) }}
-                        </td>
-                    </tr>
-                    <tr class="font-bold">
-                        <td class="capitalize !border-b !border-b-gray-300 py-3">dp 50%</td>
-                        <td class="!border-b !border-b-gray-300 py-3">:</td>
-                        <td class="!border-b !border-b-gray-300 py-3">
-                            {{ formatToIdr(booking?.total_price / 2) }}
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">booking id</td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ booking?.booking_id }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">
+                                nama pemesan
+                            </td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">{{ booking?.name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">no tlp</td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">{{ booking?.no_tlp }}</td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">check-in</td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ format(booking?.check_in, "d MMM y") }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">check-out</td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ format(booking?.check_out, "d MMM y") }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">
+                                lama menginap
+                            </td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ booking?.lama_menginap }} malam
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">
+                                jumlah orang
+                            </td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ booking?.jml_orang }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">
+                                jenis kamar
+                            </td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ booking?.jenis_kamar }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">
+                                harga kamar
+                            </td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ formatToIdr(booking?.harga_kamar) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">
+                                extra kasur
+                            </td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ booking?.detail_extra_kasur ?? "-" }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">
+                                extra makan
+                            </td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ booking?.detail_extra_makan ?? "-" }}
+                            </td>
+                        </tr>
+                        <tr class="font-bold">
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">Total</td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ formatToIdr(booking?.total_price) }}
+                            </td>
+                        </tr>
+                        <tr class="font-bold">
+                            <td class="capitalize !border-b !border-b-gray-300 py-3">dp 50%</td>
+                            <td class="!border-b !border-b-gray-300 py-3">:</td>
+                            <td class="!border-b !border-b-gray-300 py-3">
+                                {{ formatToIdr(booking?.total_price / 2) }}
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
