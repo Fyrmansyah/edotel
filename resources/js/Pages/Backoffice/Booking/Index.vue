@@ -9,7 +9,7 @@
     import { onMounted, ref, watch } from "vue";
     import { router, useForm, usePoll } from "@inertiajs/vue3";
     import Modal from "../../../Components/Backoffice/Shared/Modal/Modal.vue";
-    import { formatToIdr } from "../../../Helpers/shared";
+    import { formatToIdr, normalizePhone } from "../../../Helpers/shared";
     import { BOOKING } from "../../../Helpers/constant";
     import axios from "axios";
 
@@ -80,8 +80,9 @@
             case BOOKING.status.confirmed:
                 return "Checked In";
             case BOOKING.status.checked_in:
-            case BOOKING.status.checked_out:
                 return "Checked Out";
+            case BOOKING.status.checked_out:
+                return "Kirim Struk";
         }
     };
 
@@ -168,6 +169,28 @@
                 console.log(res);
             })
             .catch((e) => console.log(e));
+    }
+
+    function buildMessage(val) {
+        const msg = `Terima kasih telah menginap di *eDotel*. Berikut link untuk melihat struk Anda:\n${window.location.origin}/struk/${val.booking_id}\n\nSilakan beri review Anda, kami sangat menghargainya`;
+
+        return msg;
+    }
+
+    function sendStruk(val) {
+        console.log("raw val.no_tlp =", val.no_tlp);
+        const number = normalizePhone(val.no_tlp);
+
+        if (!number) {
+            console.error("Nomor telepon tidak valid:", val.no_tlp);
+            return;
+        }
+
+        const text = buildMessage(val);
+        const waUrl = `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+
+        window.open(waUrl, "_blank");
+        console.log("Open WA URL:", waUrl);
     }
 
     onMounted(() => {
@@ -291,10 +314,13 @@
                         </Button>
                         <Button
                             :variant="getBtnVariant(b.status)"
-                            data-bs-toggle="modal"
-                            :disabled="b.status === BOOKING.status.checked_out"
+                            :data-bs-toggle="b.status != BOOKING.status.checked_out ? 'modal' : ''"
                             data-bs-target="#modal-booking-aprove"
-                            @click="handleProcessBooking(b)"
+                            @click="
+                                b.status === BOOKING.status.checked_out
+                                    ? sendStruk(b)
+                                    : handleProcessBooking(b)
+                            "
                             class="whitespace-nowrap"
                             >{{ getBtnText(b.status) }}</Button
                         >

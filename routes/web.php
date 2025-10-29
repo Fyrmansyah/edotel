@@ -11,6 +11,7 @@ use App\Http\Controllers\Backoffice\KamarController;
 use App\Http\Controllers\Backoffice\ReviewController as BackofficeReviewController;
 use App\Http\Controllers\Client\BookingController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\InvoiceController;
 use App\Http\Controllers\Client\ReviewController;
 use App\Http\Controllers\SettingController;
 use App\Http\Middleware\AuthAdminMiddleware;
@@ -27,6 +28,8 @@ Route::middleware(ClientMiddleware::class)->group(function () {
     Route::post('/booking/find', [BookingController::class, 'findBookingAction']);
     Route::post('/booking', [BookingController::class, 'createBooking']);
     Route::get('/booking/{booking}', [BookingController::class, 'bookingDetail']);
+
+    Route::get('/struk/{booking_id}', [InvoiceController::class, 'index']);
 });
 
 Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function () {
