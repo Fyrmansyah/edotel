@@ -44,7 +44,7 @@
 </script>
 
 <template>
-    <div class="flex flex-col items-center py-[30px] px-[20px] gap-5 bg-green-500">
+    <div class="flex flex-col items-center py-[30px] px-[20px] gap-5 bg-[#000834]">
         <div class="bg-white flex flex-col gap-2 items-center !shadow-md max-w-md px-5 py-5 w-full">
             <img :src="'/shared/images/logo.png'" alt="logo" class="w-[150px] mb-[30px]" />
             <h6 class="font-bold text-black mb-4">Detail Booking Anda</h6>
@@ -181,11 +181,7 @@
                 </div>
             </div>
             <div class="flex justify-end mt-4">
-                <Button
-                    class="rounded !bg-green-800"
-                    :is-loading="isSubmitting"
-                    @click="handleSubmit"
-                >
+                <Button class="rounded" :is-loading="isSubmitting" @click="handleSubmit">
                     <span class="!text-white">Kirim</span>
                 </Button>
             </div>
