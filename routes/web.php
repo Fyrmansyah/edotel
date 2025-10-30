@@ -29,7 +29,7 @@ Route::middleware(ClientMiddleware::class)->group(function () {
     Route::post('/booking', [BookingController::class, 'createBooking']);
     Route::get('/booking/{booking}', [BookingController::class, 'bookingDetail']);
 
-    Route::get('/struk/{booking_id}', [InvoiceController::class, 'index']);
+    Route::get('/nota/{booking_id}', [InvoiceController::class, 'index']);
 });
 
 Route::middleware(BackofficeMiddleware::class)->prefix('admin')->group(function () {

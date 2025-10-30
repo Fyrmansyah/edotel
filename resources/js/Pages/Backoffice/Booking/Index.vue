@@ -82,7 +82,7 @@
             case BOOKING.status.checked_in:
                 return "Checked Out";
             case BOOKING.status.checked_out:
-                return "Kirim Struk";
+                return "Kirim Nota";
         }
     };
 
@@ -172,7 +172,7 @@
     }
 
     function buildMessage(val) {
-        const msg = `Terima kasih telah menginap di *eDotel*. Berikut link untuk melihat struk Anda:\n${window.location.origin}/struk/${val.booking_id}\n\nSilakan beri review Anda, kami sangat menghargainya`;
+        const msg = `Terima kasih telah menginap di *eDotel*. Berikut link untuk melihat nota Anda:\n${window.location.origin}/nota/${val.booking_id}\n\nSilakan beri review Anda, kami sangat menghargainya`;
 
         return msg;
     }
